@@ -1,6 +1,6 @@
 @font-face /*perintah untuk memanggil font eksternal*/ {
 	font-family: "poppins"; /*memberikan nama bebas untuk font*/
-	src: url("../font/poppins/Poppins-Medi.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
 }
 
 @font-face /*perintah untuk memanggil font eksternal*/ {
@@ -9,8 +9,12 @@
 }
 
 body {
-	background: linear-gradient(to right, #ff5722 0%, #ff5722 50%, #ffffff 50%, #ffffff 100%);
-	margin-top: 30px;
+	background: linear-gradient(to right, #4abdac 0%, #4abdac 50%, #f4b41a 50%, #f4b41a 100%);
+	/* margin-top: 1px; */
+}
+
+.justify-content-start {
+	margin-top: -50px;
 }
 
 .kanan img {
@@ -58,41 +62,75 @@ body {
 		font-family: Poppins-bold;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 30px;
+		font-size: 60px;
 		line-height: 90px;
 		text-align: center;
 		display: block;
 
-		color: #ffffff;
+		color: #fbfbfb;
+	}
+
+	.kanan p {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 495px;
+
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #fbfbfb;
 	}
 }
 
 h2 {
 	font-weight: 700;
 	font-size: 60px;
-	color: black;
+	color: #fbfbfb;
 	text-align: center;
 	font-family: poppins-bold;
+	letter-spacing: 12px;
 }
 
 .form-container {
-	background-color: white;
 	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
 	top: 8vh;
 	position: relative;
-	border: 5px #ff5722 solid;
 	font-family: poppins;
+}
+
+.form-container input {
+	padding: 17px;
+	font-size: 12px;
 }
 
 .text-cl-sm {
-	color: #ff5722;
+	color: #fbfbfb;
 	font: poppins;
 }
 
-.tombol {
+.teks-kolom {
+	color: #fbfbfb;
+	font: poppins;
+}
+
+#tombol {
 	background-color: #ff5722;
-	color: #ffffff;
+	color: #fbfbfb;
 	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+#tombol:hover {
+	background-color: #fbfbfb;
+	color: rgb(9, 8, 8);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
 }
