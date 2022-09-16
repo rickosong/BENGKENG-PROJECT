@@ -1,0 +1,98 @@
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+body {
+	background: linear-gradient(to right, #ff5722 0%, #ff5722 50%, #ffffff 50%, #ffffff 100%);
+	margin-top: 30px;
+}
+
+.kanan img {
+	position: absolute;
+	width: 337px;
+	height: 339px;
+	left: 60px;
+	top: 109px;
+	display: none;
+}
+
+.kanan h3 {
+	position: absolute;
+	width: 450px;
+	height: 300px;
+	top: 531px;
+
+	font-family: poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 90px;
+	text-align: center;
+	display: none;
+
+	color: #ffffff;
+}
+
+@media screen and (min-width: 1010px) {
+	.kanan img {
+		position: absolute;
+		width: 337px;
+		height: 339px;
+		left: 160px;
+		top: 70px;
+		display: block;
+	}
+
+	.kanan h3 {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 450px;
+
+		font-family: Poppins-bold;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #ffffff;
+	}
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 60px;
+	color: black;
+	text-align: center;
+	font-family: poppins-bold;
+}
+
+.form-container {
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+	top: 8vh;
+	position: relative;
+	border: 5px #ff5722 solid;
+	font-family: poppins;
+}
+
+.text-cl-sm {
+	color: #ff5722;
+	font: poppins;
+}
+
+.tombol {
+	background-color: #ff5722;
+	color: #ffffff;
+	font-family: poppins;
+}
