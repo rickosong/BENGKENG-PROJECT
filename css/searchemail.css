@@ -1,0 +1,184 @@
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+body {
+	background: linear-gradient(to right, #263571 0%, #263571 50%, #f4b41a 50%, #f4b41a 100%);
+	/* margin-top: 1px; */
+}
+
+.justify-content-start {
+	margin-top: -50px;
+}
+
+.kanan img {
+	position: absolute;
+	width: 337px;
+	height: 339px;
+	left: 60px;
+	top: 109px;
+	display: none;
+}
+
+.kanan h3 {
+	/* display: flex; */
+	text-align: center;
+	font-family: poppins-bold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	/* display: none; */
+	color: #fbfbfb;
+	margin-top: 50px;
+}
+
+.kanan p {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	/* line-height: 90px; */
+	text-align: center;
+	display: block;
+	color: #fbfbfb;
+}
+
+.form-container {
+	/* padding: 30px; */
+	top: 2vh;
+	position: relative;
+	font-family: poppins;
+}
+
+.form-container input {
+	padding: 17px;
+	font-size: 12px;
+}
+
+#tombol {
+	background-color: #fbfbfb;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+#tombol:hover {
+	background-color: #9d9d9d;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+@media screen and (min-width: 1010px) {
+	.kanan img {
+		position: absolute;
+		width: 337px;
+		height: 339px;
+		left: 160px;
+		top: 70px;
+		display: block;
+	}
+
+	.kanan h3 {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 400px;
+
+		font-family: Poppins-bold;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 60px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #fbfbfb;
+	}
+
+	.kanan p {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 500px;
+
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #fbfbfb;
+	}
+
+	.form-container {
+		padding: 30px;
+		top: 8vh;
+		position: relative;
+		font-family: poppins;
+	}
+
+	.form-container input {
+		padding: 17px;
+		font-size: 12px;
+	}
+
+	h2 {
+		font-weight: 700;
+		font-size: 60px;
+		color: #fbfbfb;
+		text-align: center;
+		font-family: poppins-bold;
+		letter-spacing: 12px;
+		margin-bottom: 30px;
+	}
+
+	#tombol {
+		background-color: #263571;
+		color: #fbfbfb;
+		font-family: poppins;
+		padding: 12px;
+		font-size: 20px;
+	}
+
+	#tombol:hover {
+		background-color: #0a122e;
+		color: #fbfbfb;
+		font-family: poppins;
+		padding: 12px;
+		font-size: 20px;
+	}
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 60px;
+	color: #fbfbfb;
+	text-align: center;
+	font-family: poppins-bold;
+	letter-spacing: 12px;
+	margin-bottom: 30px;
+}
+
+.text-cl-sm {
+	color: #fbfbfb;
+	font: poppins;
+	text-decoration: none;
+}
+
+.teks-kolom {
+	color: #fbfbfb;
+	font: poppins;
+}
