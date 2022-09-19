@@ -9,7 +9,7 @@
 }
 
 body {
-	background: linear-gradient(to right, #4abdac 0%, #4abdac 50%, #f4b41a 50%, #f4b41a 100%);
+	background: linear-gradient(to right, #263571 0%, #263571 50%, #f4b41a 50%, #f4b41a 100%);
 	/* margin-top: 1px; */
 }
 
@@ -61,6 +61,22 @@ body {
 .form-container input {
 	padding: 17px;
 	font-size: 12px;
+}
+
+#tombol {
+	background-color: #fbfbfb;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+#tombol:hover {
+	background-color: #9d9d9d;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
 }
 
 @media screen and (min-width: 1010px) {
@@ -128,6 +144,22 @@ body {
 		letter-spacing: 12px;
 		margin-bottom: 30px;
 	}
+
+	#tombol {
+		background-color: #263571;
+		color: #fbfbfb;
+		font-family: poppins;
+		padding: 12px;
+		font-size: 20px;
+	}
+
+	#tombol:hover {
+		background-color: #0a122e;
+		color: #fbfbfb;
+		font-family: poppins;
+		padding: 12px;
+		font-size: 20px;
+	}
 }
 
 h2 {
@@ -149,20 +181,4 @@ h2 {
 .teks-kolom {
 	color: #fbfbfb;
 	font: poppins;
-}
-
-#tombol {
-	background-color: #ff5722;
-	color: #fbfbfb;
-	font-family: poppins;
-	padding: 12px;
-	font-size: 20px;
-}
-
-#tombol:hover {
-	background-color: #fbfbfb;
-	color: rgb(9, 8, 8);
-	font-family: poppins;
-	padding: 12px;
-	font-size: 20px;
 }
