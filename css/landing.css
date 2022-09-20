@@ -18,7 +18,8 @@ body {
 }
 
 .navbar-brand img {
-	width: 40px;
+	align-self: center;
+	width: 80px;
 	height: 40px;
 	margin-right: 10px;
 	margin-top: 2px;
@@ -107,7 +108,7 @@ a img {
 	transition: 0.5s;
 }
 
-.price {
+.distance {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	color: #263571;
