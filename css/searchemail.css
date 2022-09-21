@@ -82,10 +82,10 @@ body {
 @media screen and (min-width: 1010px) {
 	.kanan img {
 		position: absolute;
-		width: 337px;
-		height: 339px;
-		left: 160px;
-		top: 70px;
+		width: 400px;
+		height: 400px;
+		left: 152px;
+		top: 130px;
 		display: block;
 	}
 
@@ -110,7 +110,7 @@ body {
 		position: absolute;
 		width: 450px;
 		height: 300px;
-		top: 500px;
+		top: 400px;
 
 		font-family: Poppins;
 		font-style: normal;
