@@ -172,7 +172,7 @@ h5.click-postingan a {
 .card-footer img {
 	width: 100px;
 	height: 100px;
-	margin-top: 20px;
+	margin-top: -20px;
 }
 
 .card-footer p {
