@@ -1,0 +1,108 @@
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Regular.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+body {
+	background-color: whitesmoke;
+	font-family: poppins;
+	margin-top: 100px;
+}
+
+.navbar {
+	background-color: #ff5722;
+}
+
+.navbar-brand img {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+li.nav-item {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+li.nav-item:hover {
+	transition: 0.5s;
+	font-size: 17px;
+}
+
+a.navbar-brand:hover {
+	transition: 0.5s;
+	text-shadow: 3px 2px 1px white;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+a img {
+	width: 35px;
+	height: 35px;
+	margin-top: -5px;
+}
+/* navbar enda */
+
+.gambar img {
+	height: 500px;
+}
+
+.fasilitas {
+	/* margin-left: 50px; */
+	border: solid 5px;
+	border-color: #ff5722;
+	border-radius: 10px;
+}
+
+.harga {
+	border: solid 5px;
+	border-color: #ff5722;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.text-start {
+	padding-top: 10px;
+}
+
+.btn-orange {
+	background-color: #ff5722;
+	font: poppins;
+	/* padding-top: 10px; */
+	padding-bottom: 10px;
+	color: white;
+}
+
+.button {
+	/* margin-left: 275px; */
+	/* height: 40px; */
+	/* width: 156px; */
+	margin-top: 16px;
+	margin-bottom: 15px;
+	/* margin-right: 1px; */
+}
+
+.deskripsi {
+	border: solid 5px;
+	border-color: #ff5722;
+	padding: 15px;
+	border-radius: 10px;
+	height: 300px;
+	overflow: auto;
+}
+.jenis {
+	border: solid 5px;
+	border-color: #ff5722;
+	padding: 10px;
+	border-radius: 10px;
+	/* height: 300px; */
+}
