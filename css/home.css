@@ -19,8 +19,8 @@ body {
 
 .navbar-brand img {
 	align-self: center;
-	width: 80px;
-	height: 40px;
+	width: 100px;
+	/* height: 0px; */
 	margin-right: 10px;
 	margin-top: 2px;
 }
@@ -29,6 +29,19 @@ li.nav-item {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-top: 10px;
+}
+
+#home {
+	color: #f4b41a;
+}
+
+#btn-search {
+	color: white;
+	background-color: #f4b41a;
+}
+#btn-search:hover {
+	color: white;
+	background-color: #d39810;
 }
 
 /* li.nav-item:hover {
