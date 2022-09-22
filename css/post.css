@@ -11,16 +11,16 @@
 body {
 	background-color: whitesmoke;
 	font-family: poppins;
-	margin-top: 100px;
 }
 
 .navbar {
-	background-color: #ff5722;
+	background-color: #263571;
 }
 
 .navbar-brand img {
-	width: 40px;
-	height: 40px;
+	align-self: center;
+	width: 100px;
+	/* height: 0px; */
 	margin-right: 10px;
 	margin-top: 2px;
 }
@@ -31,18 +31,58 @@ li.nav-item {
 	margin-top: 10px;
 }
 
-li.nav-item:hover {
+#home {
+	color: #f4b41a;
+}
+
+#btn-search {
+	color: white;
+	background-color: #f4b41a;
+}
+#btn-search:hover {
+	color: white;
+	background-color: #d39810;
+}
+
+/* li.nav-item:hover {
 	transition: 0.5s;
 	font-size: 17px;
-}
+} */
 
 a.navbar-brand:hover {
 	transition: 0.5s;
 	text-shadow: 3px 2px 1px white;
 }
+a img {
+	width: 35px;
+	height: 35px;
+	margin-top: -5px;
+}
 
-.dropdown:hover .dropdown-menu {
-	display: block;
+.tombolputih {
+	/* background-color: ; */
+	color: white;
+	font-family: poppins;
+}
+
+#tombolputih:hover {
+	background-color: #111111;
+	color: white;
+	font-family: poppins;
+}
+
+#tombolkuning {
+	background-color: #f4b41a;
+	color: white;
+}
+
+#tombolkuning:hover {
+	background-color: #d39810;
+	color: white;
+}
+
+.nav-link {
+	margin-top: -10px;
 }
 
 a img {
