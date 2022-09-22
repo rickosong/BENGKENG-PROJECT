@@ -1,6 +1,6 @@
 @font-face /*perintah untuk memanggil font eksternal*/ {
 	font-family: "poppins"; /*memberikan nama bebas untuk font*/
-	src: url("../font/poppins/Poppins-Regular.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
 }
 
 @font-face /*perintah untuk memanggil font eksternal*/ {
