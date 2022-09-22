@@ -20,7 +20,7 @@ body {
 	margin-bottom: 3%;
 	border-radius: 0.5rem;
 	background: #fff;
-	border: 5px solid #ff5722;
+	border: 5px solid #263571;
 }
 
 .profile-img {
@@ -88,12 +88,22 @@ body {
 }
 
 .btn-orange {
-	background-color: #ff5722;
+	background-color: #f4b41a;
+	color: white;
+}
+
+#btn-orange:hover {
+	background-color: #d39810;
 	color: white;
 }
 
 .btn-grey {
-	background-color: #414141;
+	background-color: #263571;
+	color: white;
+}
+
+#btn-grey:hover {
+	background-color: #152154;
 	color: white;
 }
 
