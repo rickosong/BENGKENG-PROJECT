@@ -10,40 +10,34 @@
 		<title>BENGKENG | HALAMAN BENGKEL</title>
 	</head>
 	<body>
-		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="home.html"><img src="../img/smkn2.png" alt="SMKN 2 Banjarmasin" title="SMKN 2 Banjarmasin">E-Reservation</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<a class="navbar-brand row justify-content-center" href="home.html"><img src="../img/Bengkeng proect navbar.png" alt="SMKN 2 Banjarmasin" title="SMKN 2 Banjarmasin"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item active">
-							<a class="nav-link active" href="home.html">Home</span></a>
+							<a class="nav-link active" id="home" href="home.html">Home</span></a>
 						</li>
-                        <li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							  Seputar Ruangan
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							  <li><a class="dropdown-item" href="ruangan.html">Ruangan</a></li>
-							  <li><a class="dropdown-item" href="pesananmember.html">Ruangan yang Disewa</a></li>
-							</ul>
 						<li class="nav-item active">
-							<a class="nav-link active" href="aboutpage.html">Tentang Kami</a>
+							<a class="nav-link active" href="bengkelterdekat.html">Bengkel Terdekat</a>
 						</li>
+						<form class="d-flex" role="search">
+							<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit" id="btn-search">Cari</button>
+						  </form>
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img class="rounded-circle" src="../img/person-circle.svg" alt="user photo">
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="profile.html"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
-                                <li><a class="dropdown-item" href="landing.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Log Out</a></li>
+                                <li><a class="dropdown-item" href="landingpage.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Log Out</a></li>
 							  </ul>
                         </li>
 					</ul>
-				</div>
 			</div>
 		</nav>
 		<!-- navbar end -->
@@ -52,18 +46,8 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="gambar col-lg-8">
+                <div class="gambar text-center">
                     <img src="../img/img1.jpg" class="col-lg-12" alt="">
-                </div>
-    
-                <div class="card justify-content-start fasilitas offset-1 col-lg-3">
-                    <h1 class="text-center">Fasilitas</h1>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                    </ul>
                 </div>
             </div>
             <br>
@@ -71,34 +55,51 @@
             <div class="col-lg-12">
                 <div class="card harga">
                     <div class="row">
-						<h1 class="text-start col-lg-6 col-md-6 col-sm-6 offset-lg-1">RP.50.000/Jam</h1>
-                    <button class="btn btn-orange offset-lg-2 col-lg-2 col-md-2 col-2 button">Pesan Sekarang</button>
+						<h1 class="text-center col-lg-6 col-md-6 col-sm-6 offset-lg-3"><strong><b>Bengkel Udin</b></strong></h1>
+                    <img src="../img/WhatsApp.svg.webp" class=" col-lg-2 col-md-2 col-2" id="wa">
 					</div>
                 </div>
             </div>
 			<br>
 
 			<div class="row">
-                <div class="deskripsi col-lg-8">
-                    <h1>Ruangan Lab Korea</h1>
-					<br><br>
+                <div class="card deskripsi col-lg-5 mx-auto d-grid gap-3">
+                    <h1>Deskripsi</h1>
+					<br>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
                 </div>
     
-                <div class="card justify-content-start offset-1 jenis col-lg-3 mx-auto">
-                    <h1 class="text-center">Jenis Ruangan</h1>
-                    <ul>
-                        <li>Ruangan Besar</li>
-                    </ul>
+                <div class="justify-content-start col-lg-3 mx-auto">
+                    <div class="row d-grid gap-2">
+						<div class="col-12 card jenis">
+							<h1 class="text-center">JENIS BENGKEL</h1>
+							<p>Bengkel Motor</p>
+						</div>
+						<div class="col-12 card jenis">
+							<h1 class="text-center">LAYANAN JASA</h1>
+							<p>Bengkel Motor</p>
+						</div>
+					</div>
                 </div>
+
+				<div class="col-3 card deskripsi d-grid gap-3 mx-auto">
+					<h1 class="text-center">LOKASI</h1>
+							<p>Jalan Antah Berantah Komplek tanpa Nama Kelurahan Suka Korupsi Kota Hantu</p>
+				</div>
             </div>
         </div>
+		<br><br><br><br>
     
 
         <!-- post page end -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<!-- jQuery end -->
     
     </body>
 </html>
