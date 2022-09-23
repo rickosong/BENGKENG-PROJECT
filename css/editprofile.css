@@ -14,6 +14,10 @@ body {
 	margin-top: 50px;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .emp-profile {
 	padding: 3%;
 	margin-top: 3%;

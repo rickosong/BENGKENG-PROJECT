@@ -17,6 +17,10 @@ body {
 	background-color: #263571;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .navbar-brand img {
 	align-self: center;
 	width: 100px;

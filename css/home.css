@@ -13,6 +13,10 @@ body {
 	font-family: poppins;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .navbar {
 	margin-top: -20px;
 	background-color: #263571;

@@ -17,6 +17,10 @@ body {
 	margin-top: -50px;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .kanan img {
 	position: absolute;
 	width: 337px;
