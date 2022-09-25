@@ -9,7 +9,7 @@
 }
 
 body {
-	background: linear-gradient(to right, #263571 0%, #263571 50%, #f4b41a 50%, #f4b41a 100%);
+	background-color: #263571;
 	/* margin-top: 1px; */
 }
 
@@ -56,10 +56,13 @@ body {
 }
 
 .form-container {
-	/* padding: 30px; */
-	top: 2vh;
+	padding: 30px;
+	top: 8vh;
 	position: relative;
 	font-family: poppins;
+	background-color: #0a122e;
+	border: 1px;
+	border-radius: 10px;
 }
 
 .form-container input {
@@ -139,16 +142,6 @@ body {
 		font-size: 12px;
 	}
 
-	h2 {
-		font-weight: 700;
-		font-size: 60px;
-		color: #fbfbfb;
-		text-align: center;
-		font-family: poppins-bold;
-		letter-spacing: 12px;
-		margin-bottom: 30px;
-	}
-
 	#tombol {
 		background-color: #263571;
 		color: #fbfbfb;
@@ -168,7 +161,7 @@ body {
 
 h2 {
 	font-weight: 700;
-	font-size: 60px;
+	font-size: 55px;
 	color: #fbfbfb;
 	text-align: center;
 	font-family: poppins-bold;
@@ -185,4 +178,20 @@ h2 {
 .teks-kolom {
 	color: #fbfbfb;
 	font: poppins;
+}
+
+#tombol {
+	background-color: #f4b41a;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+#tombol:hover {
+	background-color: #9b7929;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
 }
