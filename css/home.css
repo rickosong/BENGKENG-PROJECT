@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-brand img {
-	align-self: center;
+	/* align-self: center; */
 	width: 100px;
 	/* height: 0px; */
 	margin-right: 10px;
@@ -91,25 +91,6 @@ a img {
 }
 
 /* carousel start */
-.carousel img {
-	margin-top: 50px;
-	height: 100vh;
-}
-
-.carousel img {
-	margin-top: 50px;
-	height: 100vh;
-}
-
-.carousel-caption {
-	margin-bottom: 200px;
-}
-
-.carousel-caption h1 {
-	font-weight: 700;
-	font-size: 60px;
-	font-family: poppins-bold;
-}
 /* carousel end */
 
 /* card start */
