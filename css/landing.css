@@ -77,6 +77,10 @@ a img {
 }
 
 /* carousel start */
+.carousel img {
+	margin-top: 50px;
+	/* height: 100vh; */
+}
 /* carousel end */
 
 /* card start */
