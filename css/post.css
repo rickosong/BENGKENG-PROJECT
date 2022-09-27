@@ -158,7 +158,7 @@ a img {
 	border-color: #263571;
 	padding: 15px;
 	border-radius: 10px;
-	height: 332px;
+	height: 432px;
 	overflow: auto;
 }
 .jenis {
@@ -166,5 +166,6 @@ a img {
 	border-color: #263571;
 	padding: 10px;
 	border-radius: 10px;
-	height: 150px;
+	height: 200px;
+	overflow: auto;
 }
