@@ -20,6 +20,6 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [HomeController::class, 'index'])->name('landing');
 
 // Auth
-Route::get('/login', [AuthController::class, 'login']->name('login'))
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 // Admin Bengkel Page
