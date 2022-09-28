@@ -169,3 +169,10 @@ a img {
 	height: 200px;
 	overflow: auto;
 }
+
+#tombolModal {
+	background-color: #263571;
+}
+#tombolModal:hover {
+	background-color: #0a122e;
+}
