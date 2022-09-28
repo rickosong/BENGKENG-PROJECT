@@ -1,0 +1,183 @@
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+body {
+	background-color: #263571;
+	/* margin-top: 1px; */
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.justify-content-start {
+	margin-top: -50px;
+}
+
+.kanan img {
+	position: absolute;
+	width: 337px;
+	height: 339px;
+	left: 60px;
+	top: 109px;
+	display: none;
+}
+
+.kanan h3 {
+	/* display: flex; */
+	text-align: center;
+	font-family: poppins-bold;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	/* display: none; */
+	color: #fbfbfb;
+	margin-top: 50px;
+}
+
+.kanan p {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	/* line-height: 90px; */
+	text-align: center;
+	display: block;
+	color: #fbfbfb;
+}
+
+.form-container {
+	padding: 30px;
+	top: 8vh;
+	position: relative;
+	font-family: poppins;
+	background-color: #0a122e;
+	border: 1px;
+	border-radius: 10px;
+}
+
+.form-container input {
+	padding: 17px;
+	font-size: 12px;
+}
+
+#tombol:hover {
+	background-color: #b28a2c;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+@media screen and (min-width: 1010px) {
+	.kanan img {
+		position: absolute;
+		width: 400px;
+		height: 400px;
+		left: 152px;
+		top: 130px;
+		display: block;
+	}
+
+	.kanan h3 {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 400px;
+
+		font-family: Poppins-bold;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 60px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #fbfbfb;
+	}
+
+	.kanan p {
+		position: absolute;
+		width: 450px;
+		height: 300px;
+		top: 400px;
+
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 90px;
+		text-align: center;
+		display: block;
+
+		color: #fbfbfb;
+	}
+
+	.form-container {
+		padding: 30px;
+		top: 8vh;
+		position: relative;
+		font-family: poppins;
+	}
+
+	.form-container input {
+		padding: 17px;
+		font-size: 12px;
+	}
+
+	h2 {
+		font-weight: 700;
+		font-size: 60px;
+		color: #fbfbfb;
+		text-align: center;
+		font-family: poppins-bold;
+		letter-spacing: 12px;
+		margin-bottom: 30px;
+	}
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 60px;
+	color: #fbfbfb;
+	text-align: center;
+	font-family: poppins-bold;
+	letter-spacing: 12px;
+	margin-bottom: 30px;
+}
+
+.text-cl-sm {
+	color: #fbfbfb;
+	font: poppins;
+	text-decoration: none;
+}
+
+.teks-kolom {
+	color: #fbfbfb;
+	font: poppins;
+}
+
+#tombol {
+	background-color: #f4b41a;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}
+
+#tombol:hover {
+	background-color: #9b7929;
+	color: rgb(25, 25, 25);
+	font-family: poppins;
+	padding: 12px;
+	font-size: 20px;
+}

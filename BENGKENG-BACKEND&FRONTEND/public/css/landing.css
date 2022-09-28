@@ -1,0 +1,175 @@
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face /*perintah untuk memanggil font eksternal*/ {
+	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+}
+
+body {
+	background-color: whitesmoke;
+	font-family: poppins;
+}
+
+.navbar {
+	background-color: #263571;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.navbar-brand img {
+	align-self: center;
+	width: 100px;
+	/* height: 40px; */
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+li.nav-item {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+/* li.nav-item:hover {
+	transition: 0.5s;
+	font-size: 17px;
+} */
+
+a.navbar-brand:hover {
+	transition: 0.5s;
+	text-shadow: 3px 2px 1px white;
+}
+a img {
+	width: 35px;
+	height: 35px;
+	margin-top: -5px;
+}
+
+.tombolputih {
+	/* background-color: ; */
+	color: white;
+	font-family: poppins;
+}
+
+#tombolputih:hover {
+	background-color: #111111;
+	color: white;
+	font-family: poppins;
+}
+
+#tombolkuning {
+	background-color: #f4b41a;
+	color: white;
+}
+
+#tombolkuning:hover {
+	background-color: #d39810;
+	color: white;
+}
+
+.nav-link {
+	margin-top: -10px;
+}
+
+/* carousel start */
+.carousel img {
+	margin-top: 50px;
+	/* height: 100vh; */
+}
+/* carousel end */
+
+/* card start */
+.card {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.card:hover {
+	background-color: whitesmoke;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+	transition: 0.5s;
+}
+
+.distance {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #263571;
+}
+
+.btn-card-info {
+	background-color: #263571;
+	color: white;
+}
+
+h5.click-postingan a {
+	text-decoration: none;
+	color: black;
+}
+/* card end */
+
+/* maps start */
+.maps {
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+/* maps end */
+
+/* .btn-card-info {
+	position: absolute;
+	bottom: 10px;
+}
+.btn-card-buy {
+	position: absolute;
+	bottom: 10px;
+	left: 165px;
+} */
+
+/*footer  start*/
+.card-footer {
+	background-color: #414141;
+	height: 200px;
+}
+
+.card-footer .icon {
+	margin-top: 20px;
+	font-size: 18px;
+	margin-right: 25px;
+}
+
+.card-footer h3 {
+	color: white;
+	margin-top: 80px;
+}
+
+.card-footer .footer-t {
+	color: white;
+	margin-top: 80px;
+}
+
+.card-footer h6 {
+	color: white;
+	/* margin-left: 270px; */
+}
+
+.card-footer img {
+	width: 100px;
+	height: 100px;
+	margin-top: -20px;
+}
+
+.card-footer p {
+	color: white;
+	margin-top: 110px;
+}
+
+.space {
+	margin-left: 5px;
+}
+/* footer end */
