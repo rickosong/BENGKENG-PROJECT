@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bengkels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('namabengkel', 100);
             $table->text('deskripsi');
             $table->text('alamat');
