@@ -19,6 +19,10 @@ use App\Http\Controllers\ProfileController;
 
 // User Page
 Route::get('/', [HomeController::class, 'index'])->name('landing');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name('bengkelterdekat');
+Route::get('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel');
+Route::get('/bengkelpost', [HomeController::class, 'post'])->name('post');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');

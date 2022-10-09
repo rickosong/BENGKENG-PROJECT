@@ -26,9 +26,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function caribengkel()
     {
-        //
+        return view('user.caribengkel');
     }
 
     /**
@@ -37,9 +37,9 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function bengkelterdekat()
     {
-        //
+        return view('user.bengkelterdekat');
     }
 
     /**
@@ -48,9 +48,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function post()
     {
-        //
+        return view('user.post');
     }
 
     /**
