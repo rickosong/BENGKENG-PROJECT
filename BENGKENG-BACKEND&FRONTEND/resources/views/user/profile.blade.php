@@ -89,7 +89,7 @@
 										<label>Tanggal Lahir</label>
 									</div>
 									<div class="col-md-6">
-										<p>04 April 2004</p>
+										<p>{{ auth()->user()->birth }}</p>
 									</div>
                                     <br><br>
 								</div>
@@ -98,7 +98,7 @@
 										<label>No Telepon.</label>
 									</div>
 									<div class="col-md-6">
-										<p>0819-9861-6849</p>
+										<p>{{ auth()->user()->phonenumber }}</p>
 									</div>
                                     <br><br>
 								</div>
@@ -107,7 +107,7 @@
 										<label>Email</label>
 									</div>
 									<div class="col-md-6">
-										<p>username@gmail.com</p>
+										<p>{{ auth()->user()->email }}</p>
 									</div>
                                     <br><br><br><br><br>
 								</div>
