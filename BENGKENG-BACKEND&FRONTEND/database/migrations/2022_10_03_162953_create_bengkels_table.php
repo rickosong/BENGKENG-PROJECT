@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text('alamat');
             $table->text('layananjasa');
             $table->string('phonenumber');
-            $table->foreignId('jenisbengkel_id')->constrained('allbengkel');
-            $table->foreignId('status_id')->constrained('status');
+            $table->foreignId('jenisbengkel_id')->constrained('all_bengkels');
+            $table->foreignId('status_id')->constrained('statuses');
             $table->string('maps');
             $table->string('image');
             $table->string('views');
