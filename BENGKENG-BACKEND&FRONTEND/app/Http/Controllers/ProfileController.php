@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.landing');
-    }
-
-    public function home()
-    {
-        return view('user.home');
+        //
     }
 
     /**
