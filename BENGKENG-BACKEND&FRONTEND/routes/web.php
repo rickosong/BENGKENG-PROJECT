@@ -24,6 +24,11 @@ Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name
 Route::get('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel');
 Route::get('/bengkelpost', [HomeController::class, 'post'])->name('post');
 
+// Profile User
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/editprofile/{user:id}', [ProfileController::class, 'update'])->name('editprofile');
+Route::put('/updateprofile/{user:id}', [ProfileController::class, 'create'])->name('updateprofile');
+
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 
