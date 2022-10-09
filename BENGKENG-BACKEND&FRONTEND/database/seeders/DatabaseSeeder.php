@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'user1@gmail.com',
                 'password' => bcrypt('pass321'),
                 'phonenumber' => '081932432218',
-                'birth' => '04/04/2004',
+                'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
             ]
         );

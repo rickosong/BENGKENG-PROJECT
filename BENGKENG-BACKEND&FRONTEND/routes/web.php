@@ -31,5 +31,6 @@ Route::put('/updateprofile/{user:id}', [ProfileController::class, 'create'])->na
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'storeLogin'])->name('authlogin');
 
 // Admin Bengkel Page
