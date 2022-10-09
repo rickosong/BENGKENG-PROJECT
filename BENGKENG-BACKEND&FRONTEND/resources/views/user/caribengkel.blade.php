@@ -8,7 +8,7 @@
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 		<link rel="stylesheet" href="../css/home.css" />
 		<link rel="shortcut icon" href="../img/BENGKENG PROJECT.png" type="image/x-icon" />
-		<title>BENGKENG | HOMEPAGE</title>
+		<title>BENGKENG | CARI BENGKEL</title>
 	</head>
 	<body>
 		<!-- alert bergabung -->

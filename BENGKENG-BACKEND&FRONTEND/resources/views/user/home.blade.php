@@ -12,8 +12,8 @@
 	</head>
 	<body>
 		<!-- alert bergabung -->
-		<div class="alert alert-success text-center" role="alert">
-			Anda Punya Bengkel? Yuk Bergabung Bersama Kami Sekarang!
+		<div class="alert alert-success text-center text-success" role="alert">
+			Anda Punya Bengkel? <strong><a href="" class="text-success">Yuk Bergabung Bersama Kami Sekarang!</a></strong>
 		  </div>
 		<!-- alert bergabung end -->
 <!-- navbar -->
