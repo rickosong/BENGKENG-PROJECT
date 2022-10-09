@@ -1,3 +1,5 @@
+# INSTALASI
+
 Cara instalasi sebagai berikut :
 1. silahkan clone dari github
 2. jika sudah, buka terminal (CMD) sesuai dengan direktori folder aplikasinya, lalu buat folder "vendor" dengan mengetik "composer install"
