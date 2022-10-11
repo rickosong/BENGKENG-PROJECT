@@ -5,6 +5,8 @@ use App\Http\Controllers\BengkelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,19 +20,19 @@ use App\Http\Controllers\ProfileController;
 */
 
 // User Page
-Route::get('/', [HomeController::class, 'index'])->name('landing');
-Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name('bengkelterdekat');
-Route::get('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel');
-Route::get('/bengkelpost', [HomeController::class, 'post'])->name('post');
+Route::get('/', [HomeController::class, 'index'])->name('landing')->middleware('guest');
+Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
+Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name('bengkelterdekat')->middleware('auth');
+Route::get('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel')->middleware('auth');
+Route::get('/bengkelpost', [HomeController::class, 'post'])->name('post')->middleware('auth');
 
 // Profile User
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/editprofile/{user:id}', [ProfileController::class, 'update'])->name('editprofile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::get('/editprofile/{user:id}', [ProfileController::class, 'update'])->name('editprofile')->middleware('auth');
 Route::put('/updateprofile/{user:id}', [ProfileController::class, 'create'])->name('updateprofile');
 
 // Auth
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'storeLogin'])->name('authlogin');
 
 // Admin Bengkel Page
