@@ -28,8 +28,8 @@ Route::get('/bengkelpost', [HomeController::class, 'post'])->name('post')->middl
 
 // Profile User
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::get('/editprofile/{user:id}', [ProfileController::class, 'update'])->name('editprofile')->middleware('auth');
-Route::put('/updateprofile/{user:id}', [ProfileController::class, 'create'])->name('updateprofile');
+Route::get('/editprofile/', [ProfileController::class, 'edit'])->name('editprofile')->middleware('auth');
+Route::put('/updateprofile/', [ProfileController::class, 'update'])->name('updateprofile');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');

@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<div class="col-md-3 text-end col-sm-3">
-						<a class="btn btn-orange" id="btn-orange" href="editprofile.html">Edit Profile</a>
+						<a class="btn btn-orange" id="btn-orange" href="{{ route('editprofile') }}">Edit Profile</a>
 					</div>
 				</div>
 				<div class="row">

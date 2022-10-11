@@ -13,11 +13,11 @@
 	<body>
 		<!--profil start-->
 		<div class="container emp-profile">
-			<form action="" method="post">
+			<form action="" method="post" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-md-3">
 						<div class="profile-img">
-							<img class="logo" src="../img/person-circle.svg" alt="logo user" title="logo user" />
+							<img class="logo" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="logo user" title="logo user" />
 							<br />
 							<br />
 							<label class="custom-file-upload">
