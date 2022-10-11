@@ -34,5 +34,7 @@ Route::put('/updateprofile/{user:id}', [ProfileController::class, 'create'])->na
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'storeLogin'])->name('authlogin');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 
 // Admin Bengkel Page
