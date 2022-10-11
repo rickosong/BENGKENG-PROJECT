@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -34,7 +35,21 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $password = $request->password;
+        $confirmpass = $request->confirmpassword;
+
+        if ($password == $confirmpass) {
+            $user = New User;
+            $user->email = $request->email;
+            $user->name = $request->name;
+            $user->password = $password;
+            $user->phonenumber = $request->phone;
+            $user->birth = $request->birth;
+            $user->image = 'user.svg';
+
+            $user->save();
+        }
+
     }
 
     /**
