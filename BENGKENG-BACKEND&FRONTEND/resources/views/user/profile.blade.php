@@ -53,7 +53,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="profile-img">
-							<img class="logo" src="../img/person-circle.svg" alt="logo user" title="logo user"/>
+							<img class="logo" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="logo user" title="logo user"/>
 							<br>
 							<small>Mohon gunakan gambar yang ukurannya 1:1 agar menjadi lebih bagus</small>
 							<br>
@@ -62,7 +62,7 @@
 					<div class="col-md-6">
 						<div class="profile-head">
                             <br><br>
-							<h5>Nama Lengkap</h5>
+							<h5>{{ auth()->user()->name }}</h5>
 							<hr color="black">
 						</div>
 					</div>
@@ -80,7 +80,7 @@
 										<label>Nama</label>
 									</div>
 									<div class="col-md-6">
-										<p>Nama Lengkap</p>
+										<p>{{ auth()->user()->name }}</p>
 									</div>
                                     <br><br>
 								</div>
