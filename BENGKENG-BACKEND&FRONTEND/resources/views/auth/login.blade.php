@@ -47,7 +47,7 @@
 							<label for="password" class="teks-kolom">Password :</label>
 							<input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required />
 							<br />
-							<a href="register.html"><small class="text-cl-sm">Gak punya akun? Daftar Sekarang!</small></a
+							<a href="{{ route('register') }}"><small class="text-cl-sm">Gak punya akun? Daftar Sekarang!</small></a
 							><br />
 							<a href="searchemail.html"><small class="text-cl-sm">Forgot Password?</small></a>
 						</div>
