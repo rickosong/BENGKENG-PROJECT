@@ -59,14 +59,14 @@
 							<br>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-3">
 						<div class="profile-head">
                             <br><br>
 							<h5>{{ auth()->user()->name }}</h5>
 							<hr color="black">
 						</div>
 					</div>
-					<div class="col-md-3 text-end">
+					<div class="col-md-3 text-end col-sm-3">
 						<a class="btn btn-orange" id="btn-orange" href="editprofile.html">Edit Profile</a>
 					</div>
 				</div>
