@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
                 'phonenumber' => '6281932432218',
                 'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
+                'havebengkel' => false,
             ]
         );
 

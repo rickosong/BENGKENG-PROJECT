@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phonenumber');
             $table->string('birth');
             $table->string('image');
+            $table->string('havebengkel');
             // $table->rememberToken();
             $table->timestamps();
         });
