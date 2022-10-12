@@ -38,7 +38,12 @@
 								<li><a class="dropdown-item" href="daftarbengkel.html"><span><i class="fa fa-user-circle" aria-hidden="true"></i>Buka Bengkel</span> </a></li>
 								<li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{ route('profile') }}"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
-                                <li><a class="dropdown-item" href="landing.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Log Out</a></li>
+                                <li>
+									<form action="{{ route('logout') }}" method="post">
+										@csrf
+										<button class="dropdown-item" type="submit">Log Out</button>
+									</form>
+								</li>
 							  </ul>
                         </li>
 					</ul>

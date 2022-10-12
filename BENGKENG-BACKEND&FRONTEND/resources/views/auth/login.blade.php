@@ -38,6 +38,11 @@
 							  		{{ session('loginError') }}
 								</div>
 							@endif
+							@if(session()->has('success'))
+								<div class="alert alert-success" role="alert">
+							  		{{ session('success') }}
+								</div>
+							@endif
 							<!-- <br /><br /> -->
 							<label for="email" class="teks-kolom">Email :</label>
 							<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" required />

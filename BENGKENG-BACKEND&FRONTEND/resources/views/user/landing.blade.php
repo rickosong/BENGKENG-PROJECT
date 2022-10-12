@@ -14,17 +14,17 @@
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand row justify-content-center" href="home.html"><img src="../img/Bengkeng proect navbar.png" alt="BENGKENG logo" title="BENGKENG"></a>
+				<a class="navbar-brand row justify-content-center" href="{{ route('landing') }}"><img src="../img/Bengkeng proect navbar.png" alt="BENGKENG logo" title="BENGKENG"></a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item active">
-							<a class=" btn nav-link" id="tombolkuning" href="login.html">Login</span></a>
+							<a class=" btn nav-link" id="tombolkuning" href="{{ route('login') }}">Login</span></a>
 						</li>
 						<li class="nav-item active">
-							<a class="btn btn-outline-dark nav-link active" id="tombolputih" href="register.html">register</span></a>
+							<a class="btn btn-outline-dark nav-link active" id="tombolputih" href="{{ route('register') }}">register</span></a>
 						</li>
 					</ul>
 				</div>

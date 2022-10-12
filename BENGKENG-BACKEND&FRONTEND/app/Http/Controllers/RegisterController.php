@@ -35,20 +35,30 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'password' => 'required|min:5|max:255',
+            'email' => 'required|email:dns|min:3|max:255|unique:users'
+        ]);
+
         $password = $request->password;
         $confirmpass = $request->confirmpassword;
 
         if ($password == $confirmpass) {
-            $user = New User;
+            $user = New User();
             $user->email = $request->email;
-            $user->name = $request->name;
-            $user->password = $password;
+            $user->name = 'Silahkan isi Nama Anda';
+            $user->password = bcrypt($password);
             $user->phonenumber = $request->phone;
-            $user->birth = $request->birth;
+            $user->birth = 'Silahkan isi tanggal lahir anda';
             $user->image = 'user.svg';
+            $user->havebengkel = false;
 
             $user->save();
+
+            return redirect('/login')->with('success', 'Registrasi Berhasil');
         }
+
+        return back()->with('registerError', 'Registrasi gagal, pastikan password dan konfirmasi password sama dan silahkan coba kembali');
 
     }
 
