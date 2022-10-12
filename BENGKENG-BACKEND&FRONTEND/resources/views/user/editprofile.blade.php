@@ -40,7 +40,7 @@
 							<br />
 							<div class="form-group mb-3">
 								<label for="tanggal" class="teks-kolom">Tanggal Lahir:</label>
-								<input type="datetime" class="form-control" id="tanggal" placeholder="Masukkan Password" required />
+								<input type="date" class="form-control" id="tanggal" placeholder="Masukkan Password" required />
 							</div>
 							<br />
 							<div class="form-group mb-3">

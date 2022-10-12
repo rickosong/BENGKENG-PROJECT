@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
 	<link rel="shortcut icon" href="../img/BENGKENG PROJECT.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> --}}
     <link rel="stylesheet" href="../css/profile.css" />
   </head>
   <body>
@@ -21,10 +21,10 @@
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item active">
-							<a class="nav-link active" id="home" href="home.html">Home</span></a>
+							<a class="nav-link active" id="home" href="{{ route('home') }}">Home</span></a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link active" href="bengkelterdekat.html">Bengkel Terdekat</a>
+							<a class="nav-link active" href="{{ route('bengkelterdekat') }}">Bengkel Terdekat</a>
 						</li>
 						<form class="d-flex" role="search">
 							<input class="form-control me-2" type="search" placeholder="Cari Bengkel atau Jasa" aria-label="Search">
@@ -32,12 +32,12 @@
 						  </form>
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="rounded-circle" src="../img/person-circle.svg" alt="user photo">
+                                <img class="rounded-circle" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="user photo">
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" href="daftarbengkel.html"><span><i class="fa fa-user-circle" aria-hidden="true"></i>Buka Bengkel</span> </a></li>
 								<li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="profile.html"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
+                                <li><a class="dropdown-item" href="{{ route('profile') }}"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
                                 <li><a class="dropdown-item" href="landing.html"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Log Out</a></li>
 							  </ul>
                         </li>
