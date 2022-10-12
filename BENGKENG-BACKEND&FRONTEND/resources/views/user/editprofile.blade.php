@@ -7,13 +7,15 @@
 		<title>BENGKENG | EDIT PROFILE</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<link rel="shortcut icon" href="../img/BENGKENG PROJECT.png" type="image/x-icon" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> --}}
 		<link rel="stylesheet" href="../css/editprofile.css" />
 	</head>
 	<body>
 		<!--profil start-->
 		<div class="container emp-profile">
-			<form action="" method="post" enctype="multipart/form-data">
+			<form action="{{ route('updateprofile') }}" method="post" enctype="multipart/form-data">
+				@csrf
+				@method('PUT')
 				<div class="row">
 					<div class="col-md-3">
 						<div class="profile-img">
@@ -23,7 +25,7 @@
 							<label class="custom-file-upload">
 								<div class="mb-3">
 									<label for="formFileSm" class="form-label">Klik untuk Masukkan gambar</label>
-									<input class="form-control form-control-sm" id="formFileSm" type="file" />
+									<input class="form-control form-control-sm" name="image" id="formFileSm" type="file" accept="image/png, image/jpeg" />
 								</div>
 							</label>
 							<br />
@@ -35,22 +37,22 @@
 						<div class="profile-head">
 							<div class="form-group mb-3">
 								<label for="username" class="teks-kolom">Nama Lengkap:</label>
-								<input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Masukkan Nama Anda" required />
+								<input type="text" class="form-control" id="username" name="name" aria-describedby="emailHelp" placeholder="Masukkan Nama Anda" value="{{ $datauser->name }}" required />
 							</div>
 							<br />
 							<div class="form-group mb-3">
 								<label for="tanggal" class="teks-kolom">Tanggal Lahir:</label>
-								<input type="date" class="form-control" id="tanggal" placeholder="Masukkan Password" required />
+								<input type="date" class="form-control" id="tanggal" name="birth" placeholder="Masukkan tanggal" value="{{ $datauser->birth }}" required />
 							</div>
 							<br />
 							<div class="form-group mb-3">
 								<label for="telepon" class="teks-kolom">No. Telepon:</label>
-								<input type="number" class="form-control" id="telepon" placeholder="Masukkan Nomor HP" required />
+								<input type="number" class="form-control" id="telepon" name="phone" placeholder="Masukkan Nomor HP" value="{{ $datauser->phonenumber }}" required />
 							</div>
 							<br />
 							<div class="form-group mb-3">
 								<label for="email" class="teks-kolom">Email:</label>
-								<input type="email" class="form-control" id="email" placeholder="Masukkan Email" required />
+								<input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="{{ $datauser->email }}" required />
 								<br /><br />
 							</div>
 						</div>
@@ -62,11 +64,11 @@
 							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 								<div class="row">
 									<div class="col-md-12 text-end">
-										<a href="profile.html" class="btn btn-grey" id="btn-grey"
+										<a href="{{ route('profile') }}" class="btn btn-grey" id="btn-grey"
 											><span><i class="fa fa-reply" aria-hidden="true"></i></span> Kembali</a
 										>
 										<button class="btn btn-orange" id="btn-orange" type="submit">
-											<span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Masuk
+											<span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Simpan
 										</button>
 									</div>
 								</div>

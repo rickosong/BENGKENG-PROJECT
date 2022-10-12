@@ -19,7 +19,7 @@
 				  </form>
 				<li class="nav-item dropdown active">
 					<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="rounded-circle" src="../img/person-circle.svg" alt="user photo">
+						<img class="rounded-circle" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="user photo">
 					  </a>
 					  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item" href="daftarbengkel.html"><span>Buka Bengkel<i class="fa fa-user-circle" aria-hidden="true"></i></span> </a></li>

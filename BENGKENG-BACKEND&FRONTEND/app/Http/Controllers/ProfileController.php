@@ -58,7 +58,11 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('user.editprofile');
+        $datauser = User::find(auth()->user()->id);
+
+        return view('user.editprofile',[
+            'datauser' => $datauser,
+        ]);
     }
 
     /**
@@ -68,9 +72,28 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $profile = User::find(auth()->user()->id);
+
+        $profile->name = $request->name;
+        $profile->birth = $request->birth;
+        $profile->phonenumber = $request->phone;
+        $profile->email = $request->email;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('img'), $imageName);
+            
+            $profile->image = $imageName;
+        } else {
+            $profile->image = $profile->image;
+        }
+
+        $profile->update();
+
+        return redirect('/profile')->with('success', 'profil berhasil diubah');
     }
 
     /**
