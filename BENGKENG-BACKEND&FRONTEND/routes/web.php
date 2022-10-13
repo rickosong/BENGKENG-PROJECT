@@ -33,12 +33,12 @@ Route::put('/updateprofile/', [ProfileController::class, 'update'])->name('updat
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
-Route::post('/login', [AuthController::class, 'storeLogin'])->name('authlogin');
+Route::post('/cek-login', [AuthController::class, 'storeLogin'])->name('authlogin');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store'])->name('storeregister');
+Route::post('/upload-register', [RegisterController::class, 'store'])->name('storeregister');
 Route::get('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel')->middleware('auth');
-Route::post('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel');
+Route::post('buat-bengkel', [BengkelController::class, 'create'])->name('buatbengkel');
 
 // Admin Bengkel Page
 Route::get('dashboardbengkel', [BengkelController::class, 'index'])->name('dashboard')->middleware('auth');

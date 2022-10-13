@@ -293,7 +293,7 @@
                                           <div class="form-group col-3">
                                             <label>Status Keaktifan Bengkel</label>
                                             <select class="form-control">
-                                            <option value="">---</option>
+                                            <option selected="true" disabled="disabled" value="">---</option>
                                               <option>Aktif</option>
                                               <option>Tidak Aktif</option>
                                             </select>

@@ -26,50 +26,52 @@
 
 			<section class="row justify-content-center">
 				<section class="col-sm-12 col-lg-5 col-md-12">
-					<form class="form-container">
+					<form class="form-container" action="{{ route('buatbengkel') }}" method="POST" enctype="multipart/form-data">
+						@csrf
 						<div class="form-group mb-3">
 							<div class="text-center">
 								<img src="../img/BENGKENG PROJECT.png" style="width: 100px; height: 100px" alt="" />
 							</div>
 							<h2>DAFTAR BENGKEL</h2>
 							<!-- <br /><br /> -->
-							<label for="email" class="teks-kolom">Nama Bengkel :</label>
-							<input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" />
+							<label for="text" class="teks-kolom">Nama Bengkel :</label>
+							<input type="text" class="form-control" id="text" name="name" aria-describedby="emailHelp" placeholder="Masukkan Nama Bengkel" value="{{ old('name') }}" />
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="deskripsi" class="teks-kolom">Deskripsi Bengkel :</label>
 							<br />
-							<textarea class="col-12" name="" id="deskripsi" cols="46" rows="4" style="border-radius: 10px" placeholder="Masukkan Deskripsi Bengkel"></textarea>
+							<textarea class="col-12" name="deskripsi" id="deskripsi" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Deskripsi Bengkel" value="{{ old('deskripsi') }}"></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="alamat" class="teks-kolom">Alamat Bengkel :</label>
-							<textarea class="col-12" name="alamat" id="alamat" cols="46" rows="4" style="border-radius: 10px" placeholder="Masukkan Alamat Bengkel"></textarea>
+							<textarea class="col-12" name="alamat" id="alamat" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Alamat Bengkel" value="{{ old('alamat') }}"></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="layanan" class="teks-kolom">layanan Jasa :</label>
-							<textarea class="col-12" name="" id="layanan" cols="46" rows="4" style="border-radius: 10px" placeholder="Layanan Jasa yang disediakan"></textarea>
+							<textarea class="col-12" name="layanan" id="layanan" cols="46" rows="3" style="border-radius: 10px"  placeholder="Layanan Jasa yang disediakan" value="{{ old('layanan') }}"></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="jenis" class="teks-kolom">jenis Bengkel :</label>
-							<select name="" id="jenis" class="form-control">
-								<option value="">---</option>
-								<option value="">Bengkel Motor</option>
-								<option value="">Bengkel Mobil</option>
+							<select name="jenis" id="jenis" class="form-control">
+								<option selected="true" disabled="disabled" value="">---</option>
+								@foreach ($allJenisBengkel as $jenisbengkel)
+								<option value="{{ $jenisbengkel->id }}">{{ $jenisbengkel->jenis_bengkel }}</option>
+								@endforeach
 							</select>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="number" class="teks-kolom">Nomor HP :</label>
-							<input type="number" class="form-control" id="number" placeholder="Masukkan Nomor HP Anda" />
+							<input type="number" class="form-control" id="number" name="phone" placeholder="Masukkan Nomor HP Anda" value="{{ old('phone') }} />
 						</div>
 						<br />
 						<div class="form-group mb-3">
-							<label for="gambar" class="teks-kolom">Gambar Bengkel :</label>
-							<input class="form-control" type="file" id="" placeholder="Masukkan Gambar Bengkel Anda" />
+							<label for="formFileSm" class="form-label teks-kolom">Gambar Bengkel</label>
+								<input class="form-control form-control-sm" name="image" id="formFileSm" type="file" placeholder="Klik untuk masukkan gambar" accept="image/png, image/jpeg" />
 						</div>
 						<br />
 						<div class="form-group mb-3">
@@ -88,13 +90,11 @@
 								</div>
 							</div>
 							<br />
-							<input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Maps (Logitude dan latitude)" />
+							<input type="text" class="form-control" id="email" name="maps" aria-describedby="emailHelp" placeholder="Maps (Logitude dan latitude)" value="{{ old('maps') }}" />
 						</div>
 						<br />
 						<div class="d-grid gap-2">
-							<a href="index.html" class="btn tombol" id="tombol" type="submit"
-								><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Daftar</a
-							>
+							<button class="btn tombol" id="tombol" type="submit">Daftar</button>
 						</div>
 					</form>
 					<br /><br /><br />
