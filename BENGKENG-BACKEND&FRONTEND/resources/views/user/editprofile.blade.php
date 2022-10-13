@@ -42,7 +42,7 @@
 							<br />
 							<div class="form-group mb-3">
 								<label for="tanggal" class="teks-kolom">Tanggal Lahir:</label>
-								<input type="date" class="form-control" id="tanggal" name="birth" placeholder="Masukkan tanggal" value="{{ $datauser->birth }}" required />
+								<input type="date" class="form-control" id="tanggal" name="birth" value="{{ $datauser->birth }}" required />
 							</div>
 							<br />
 							<div class="form-group mb-3">
@@ -52,7 +52,7 @@
 							<br />
 							<div class="form-group mb-3">
 								<label for="email" class="teks-kolom">Email:</label>
-								<input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" value="{{ $datauser->email }}" required />
+								<input type="email" class="form-control" id="email" placeholder="Masukkan Email" value="{{ $datauser->email }}" required readonly/>
 								<br /><br />
 							</div>
 						</div>
