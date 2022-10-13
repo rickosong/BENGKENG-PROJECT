@@ -38,7 +38,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/upload-register', [RegisterController::class, 'store'])->name('storeregister');
 Route::get('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel')->middleware('auth');
-Route::post('buat-bengkel', [BengkelController::class, 'create'])->name('buatbengkel');
+Route::post('buat-bengkel', [BengkelController::class, 'store'])->name('buatbengkel');
 
 // Admin Bengkel Page
 Route::get('dashboardbengkel', [BengkelController::class, 'index'])->name('dashboard')->middleware('auth');

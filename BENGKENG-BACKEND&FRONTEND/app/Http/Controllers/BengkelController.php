@@ -16,7 +16,7 @@ class BengkelController extends Controller
     public function index()
     {
         return view('admin.index', [
-            'bengkels' => Bengkel::where('user_id', auth()->user()->id)
+            'bengkelan' => Bengkel::where('user_id', auth()->user()->id),
         ]);
     }
 
@@ -45,6 +45,10 @@ class BengkelController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->extension();
+        $image->move(public_path('img'), $imageName);
+
         $bengkel = New Bengkel;
 
         $bengkel->user_id = auth()->user()->id;
@@ -56,7 +60,7 @@ class BengkelController extends Controller
         $bengkel->jenisbengkel_id = $request->jenis;
         $bengkel->status_id = 1;
         $bengkel->maps = $request->maps;
-        $bengkel->image = $request->image;
+        $bengkel->image = $imageName;
         $bengkel->views = 0;
 
         $bengkel->save();
