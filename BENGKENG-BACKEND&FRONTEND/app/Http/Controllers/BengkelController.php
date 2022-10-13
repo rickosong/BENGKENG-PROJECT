@@ -13,7 +13,12 @@ class BengkelController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.index');
+    }
+
+    public function review()
+    {
+        return view('admin.review');
     }
 
     /**
@@ -23,7 +28,7 @@ class BengkelController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.daftarbengkel');
     }
 
     /**
@@ -56,7 +61,7 @@ class BengkelController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.settings');
     }
 
     /**

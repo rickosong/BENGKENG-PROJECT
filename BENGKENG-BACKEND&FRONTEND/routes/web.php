@@ -37,5 +37,11 @@ Route::post('/login', [AuthController::class, 'storeLogin'])->name('authlogin');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->name('storeregister');
+Route::get('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel')->middleware('auth');
+Route::post('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel');
 
 // Admin Bengkel Page
+Route::get('dashboardbengkel', [BengkelController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('bengkelreview', [BengkelController::class, 'review'])->name('dashboardReview')->middleware('auth');
+Route::get('settings/{bengkel:id}', [BengkelController::class, 'edit'])->name('settings')->middleware('auth');
+Route::get('update-settings/{bengkel:id}', [BengkelController::class, 'update'])->name('editsettings');
