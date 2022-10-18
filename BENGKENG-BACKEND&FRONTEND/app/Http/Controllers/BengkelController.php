@@ -16,7 +16,7 @@ class BengkelController extends Controller
     public function index()
     {
         return view('admin.index', [
-            'bengkelan' => Bengkel::where('user_id', auth()->user()->id),
+            'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -63,9 +63,12 @@ class BengkelController extends Controller
         $bengkel->image = $imageName;
         $bengkel->views = 0;
 
-        $bengkel->save();
+        if ($bengkel->save()) {
+            return redirect('/dashboardbengkel');
+        } else{
+            return redirect('/daftarbengkel')->with('daftarError', 'data yang dimasukkan kurang lengkap/tidak sesuai');
+        }
 
-        return redirect('/dashboardbengkel');
     }
 
     /**

@@ -34,24 +34,29 @@
 							</div>
 							<h2>DAFTAR BENGKEL</h2>
 							<!-- <br /><br /> -->
+							@if(session()->has('daftarError'))
+								<div class="alert alert-danger" role="alert">
+							  		{{ session('daftarError') }}
+								</div>
+							@endif
 							<label for="text" class="teks-kolom">Nama Bengkel :</label>
-							<input type="text" class="form-control" id="text" name="name" aria-describedby="emailHelp" placeholder="Masukkan Nama Bengkel" value="{{ old('name') }}" />
+							<input type="text" class="form-control" id="text" name="name" aria-describedby="emailHelp" placeholder="Masukkan Nama Bengkel" value="{{ old('name') }}" required />
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="deskripsi" class="teks-kolom">Deskripsi Bengkel :</label>
 							<br />
-							<textarea class="col-12" name="deskripsi" id="deskripsi" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Deskripsi Bengkel" value="{{ old('deskripsi') }}"></textarea>
+							<textarea class="col-12" name="deskripsi" id="deskripsi" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Deskripsi Bengkel" value="{{ old('deskripsi') }}" required></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="alamat" class="teks-kolom">Alamat Bengkel :</label>
-							<textarea class="col-12" name="alamat" id="alamat" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Alamat Bengkel" value="{{ old('alamat') }}"></textarea>
+							<textarea class="col-12" name="alamat" id="alamat" cols="46" rows="3" style="border-radius: 10px" placeholder="Masukkan Alamat Bengkel" value="{{ old('alamat') }}" required></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
 							<label for="layanan" class="teks-kolom">layanan Jasa :</label>
-							<textarea class="col-12" name="layanan" id="layanan" cols="46" rows="3" style="border-radius: 10px"  placeholder="Layanan Jasa yang disediakan" value="{{ old('layanan') }}"></textarea>
+							<textarea class="col-12" name="layanan" id="layanan" cols="46" rows="3" style="border-radius: 10px"  placeholder="Layanan Jasa yang disediakan" value="{{ old('layanan') }}" required></textarea>
 						</div>
 						<br />
 						<div class="form-group mb-3">
