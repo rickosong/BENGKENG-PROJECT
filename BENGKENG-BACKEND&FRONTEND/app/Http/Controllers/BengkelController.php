@@ -150,6 +150,14 @@ class BengkelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bengkel = Bengkel::find($id);
+
+        if($bengkel->delete()){
+            echo "<script>alert('Data berhasil dihapus')</script>";
+            return redirect('/home');
+        }
+        else{
+            return back()->with('errorDel', 'Data Tidak Berhasil Terhapus');
+        }
     }
 }

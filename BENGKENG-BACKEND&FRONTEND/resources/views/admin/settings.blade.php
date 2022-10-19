@@ -244,15 +244,18 @@
                                       </div>
                                       <!-- /.card-body -->
                       
-                                      <div class="row">
-											<div class="card-footer col-6">
-												<button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data anda?')">Hapus</button>
+
+											<div class="card-footer row justify-content-end">
+												<div class="card-footer col-6 row justify-content-end">
+													<button type="submit" class="btn btn-primary">Ubah</button>
+												  </div>
+									</form>
+												<form action="{{ route('deletesettings', $bengkel->id) }}" method="post">
+													@csrf
+													@method('DELETE')
+													<button style="margin-top: 12px" type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data anda?')">Hapus</button>
+												</form>
 										  	</div>
-										  	<div class="card-footer col-6 row justify-content-end">
-												<button type="submit" class="btn btn-primary">Ubah</button>
-										  	</div>
-									  </div>
-                                    </form>
                                   </div>
 							</section>
 							<!-- /.Left col -->

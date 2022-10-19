@@ -45,3 +45,4 @@ Route::get('dashboardbengkel', [BengkelController::class, 'index'])->name('dashb
 Route::get('bengkelreview', [BengkelController::class, 'review'])->name('dashboardReview')->middleware('auth');
 Route::get('pengaturan/{bengkel:id}', [BengkelController::class, 'edit'])->name('settings')->middleware('auth');
 Route::put('update-settings/{bengkel:id}', [BengkelController::class, 'update'])->name('updatesettings');
+Route::delete('deletebengkel/{bengkel:id}', [BengkelController::class, 'destroy'])->name('deletesettings');
