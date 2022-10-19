@@ -51,9 +51,13 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function post()
+    public function post($id)
     {
-        return view('user.post');
+        $bengkel = Bengkel::find($id);
+
+        return view('user.post', [
+            'bengkel' => $bengkel,
+        ]);
     }
 
     /**

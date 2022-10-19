@@ -12,14 +12,55 @@
 	</head>
 	<body>
 
-		@include('partials.navbar')
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand row justify-content-center" href="home.html"><img src="../img/Bengkeng proect navbar.png" alt="BENGKENG logo" title="BENGKENG"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item active">
+							<a class="nav-link active" id="home" href="{{ route('home') }}">Home</span></a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link active" href="{{ route('bengkelterdekat') }}">Bengkel Terdekat</a>
+						</li>
+						<form class="d-flex" role="search">
+							<input class="form-control me-2" type="search" placeholder="Cari Bengkel atau Jasa" aria-label="Search">
+							<a class="btn btn-outline-success" type="submit" id="btn-search" href="{{ route('caribengkel') }}">Cari</a>
+						  </form>
+						<li class="nav-item dropdown active" style="">
+							<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<img class="rounded-circle" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="user photo">
+							  </a>
+							  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								@if (auth()->user()->havebengkel == 1)
+								<li><a class="dropdown-item" href="{{ route('dashboard') }}"><span>Bengkel Anda<i class="fa fa-user-circle" aria-hidden="true"></i></span> </a></li>
+								@else
+								<li><a class="dropdown-item" href="{{ route('daftarbengkel') }}"><span>Buka Bengkel<i class="fa fa-user-circle" aria-hidden="true"></i></span> </a></li>
+								@endif
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="{{ route('profile') }}"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
+								<li>
+									<form action="{{ route('logout') }}" method="post">
+										@csrf
+										<button class="dropdown-item" type="submit">Log Out</button>
+									</form>
+								</li>
+							  </ul>
+						</li>
+					</ul>
+			</div>
+		</nav>
+		<!-- navbar end -->
 
         <!-- post page start -->
 
         <div class="container-fluid">
             <div class="row">
                 <div class="gambar text-center">
-                    <img src="../img/gambar bengkel.jpg" class="col-lg-12" alt="">
+                    <img src="{{ '../img' }}/{{ $bengkel->image }}" class="col-lg-12" alt="">
                 </div>
             </div>
             <br>
@@ -27,7 +68,7 @@
             <div class="col-lg-12">
                 <div class="card harga">
                     <div class="row">
-						<h1 class=" col-lg-6 col-md-7 col-5 offset-lg-1"><strong><b>Bengkel Udin</b></strong></h1>
+						<h1 class=" col-lg-6 col-md-7 col-5 offset-lg-1"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
 						<span class="col-lg-2 col-5 col-md-3 offset-lg-1">
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">500</span></button>
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewJelek" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">15</span></button>
@@ -91,12 +132,9 @@
 
 			<div class="row">
                 <div class="card deskripsi col-lg-5 col-10 offset-1 mx-auto d-grid gap-2 mb-4">
-                    <h1>DESKRIPSI</h1>
+                    <h2>DESKRIPSI</h2>
 					<br>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, ut totam. Sunt ipsum, alias quia, aspernatur id placeat perferendis corrupti aperiam magni omnis hic veniam, quaerat ipsa. Culpa, eaque pariatur!
+					{{ $bengkel->deskripsi }}
                 </div>
     
                 <div class="justify-content-start col-lg-3 mx-auto">
@@ -104,20 +142,24 @@
 						<div class="col-10 offset-1 card jenis mb-4">
 							<h1 class="text-center">JENIS BENGKEL</h1>
 							<br>
-							<p>Bengkel Motor</p>
+							@if ($bengkel->jenisbengkel_id == 1)
+								<p>Bengkel Motor</p>
+							@else
+								<p>Bengkel Mobil</p>
+							@endif
 						</div>
 						<div class="col-10 offset-1 card jenis mb-4">
 							<h1 class="text-center">LAYANAN JASA</h1>
 							<br>
-							<p>Bengkel Motor</p>
+							<p>{{ $bengkel->layananjasa }}</p>
 						</div>
 					</div>
                 </div>
 				
 
 				<div class="col-10 offset-1 col-lg-3 card deskripsi d-grid gap-3 mx-auto mb-4">
-					<h1 class="text-center">LOKASI</h1>
-							<p>Jalan Antah Berantah Komplek tanpa Nama Kelurahan Suka Korupsi Kota Hantu</p>
+					<h1 class="text-center">ALAMAT</h1>
+							<p>{{ $bengkel->alamat }}</p>
 				</div>
 				<div class="col-10 offset-1 col-lg-10 offset-lg-1 card deskripsi d-grid gap-3 mx-auto">
 					<h1 class="text-center">REVIEW</h1>
