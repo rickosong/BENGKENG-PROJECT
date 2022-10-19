@@ -51,50 +51,20 @@
 			<br><br>
 			<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
 			<div class="row">
+				@forelse ($Bengkels as $bengkel)
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
 					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." />
 						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 1</h5>
+							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
 							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 2</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 3</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 4</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-						</div>
-					</div>
-				</div>
-			</div>		
+				@empty
+					<p>tidak ada bengkel</p>
+				@endforelse ($collection as $item)
 
 			<br><br>
 			<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>

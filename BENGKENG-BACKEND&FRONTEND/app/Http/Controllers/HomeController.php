@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Bengkel;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,9 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('user.home');
+        return view('user.home', [
+            'Bengkels' => Bengkel::all(),
+        ]);
     }
 
     /**
