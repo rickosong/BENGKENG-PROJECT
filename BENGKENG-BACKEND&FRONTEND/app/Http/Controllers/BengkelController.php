@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AllBengkel;
 use App\Models\Bengkel;
+use App\Models\Status;
 
 class BengkelController extends Controller
 {
@@ -22,7 +23,9 @@ class BengkelController extends Controller
 
     public function review()
     {
-        return view('admin.review');
+        return view('admin.review', [
+            'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
+        ]);
     }
 
     /**
@@ -90,7 +93,14 @@ class BengkelController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.settings');
+        $bengkel = Bengkel::find($id);
+
+        return view('admin.settings',[
+            'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
+            'bengkel' => $bengkel,
+            'allJenisBengkel' => AllBengkel::all(),
+            'allStatus' => Status::all(),
+        ]);
     }
 
     /**
