@@ -112,7 +112,34 @@ class BengkelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bengkel = Bengkel::find($id);
+
+        $bengkel->namabengkel  =  $request->name;
+        $bengkel->deskripsi  =  $request->deskripsi;
+        $bengkel->alamat  =  $request->alamat;
+        $bengkel->layananjasa  =  $request->layananjasa;
+        $bengkel->phonenumber  =  $request->phone;
+        $bengkel->jenisbengkel_id = $request->jenisbengkel;
+        $bengkel->status_id  =  $request->status;
+        $bengkel->maps = $request->maps;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('img'), $imageName);
+            
+            $bengkel->image = $imageName;
+        } else {
+            $bengkel->image = $bengkel->image;
+        }
+
+        if ($bengkel->save()) {
+            return back()->with('success', 'Data Berhasil Terupdate');
+        }
+        else{
+            return back()->with('error', 'Data Tidak Berhasil Terupdate');
+        }
+
     }
 
     /**

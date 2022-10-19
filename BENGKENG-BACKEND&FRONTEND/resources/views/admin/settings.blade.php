@@ -156,57 +156,78 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form>
+                                    <form action="{{ route('updatesettings', $bengkel->id) }}" method="POST" enctype="multipart/form-data">
+										@csrf
+										@method('PUT')
                                       <div class="card-body">
+										@if (session()->has('success'))
+										<div class="alert alert-warning alert-dismissible fade show" role="alert">
+											<strong>{{ session('success') }}</strong>
+											<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										  </div>
+										@endif
+										@if (session()->has('error'))
+										<div class="alert alert-warning alert-dismissible fade show" role="alert">
+											<strong>{{ session('error') }}</strong>
+											<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										  </div>
+										@endif
                                         <div class="form-group">
                                           <label for="exampleInputEmail1">Nama Bengkel</label>
-                                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Bengkel" value="{{ $bengkel ->namabengkel }}" required>
+                                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Bengkel" name="name" value="{{ $bengkel ->namabengkel }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi Bengkel</label>
-                                            <textarea class="form-control" rows="3" placeholder="Masukkan Deskripsi" required>{{ $bengkel->deskripsi }}</textarea>
+                                            <textarea class="form-control" rows="3" name="deskripsi" placeholder="Masukkan Deskripsi" required>{{ $bengkel->deskripsi }}</textarea>
                                           </div>
                                         <div class="form-group">
                                             <label>Alamat Bengkel</label>
-                                            <textarea class="form-control" rows="3" placeholder="Masukkan Alamat Bengkel">{{ $bengkel->alamat }}</textarea>
+                                            <textarea class="form-control" name="alamat" rows="3" placeholder="Masukkan Alamat Bengkel">{{ $bengkel->alamat }}</textarea>
                                           </div>
                                         <div class="form-group">
                                             <label>Layanan Jasa</label>
-                                            <textarea class="form-control" rows="3" placeholder="Masukkan Layanan Jasa yang Anda Sediakan">{{ $bengkel->layananjasa }}}</textarea>
+                                            <textarea class="form-control" rows="3" name="layananjasa" placeholder="Masukkan Layanan Jasa yang Anda Sediakan">{{ $bengkel->layananjasa }}</textarea>
                                           </div>
 										  <div class="form-group">
 											<label for="exampleInputEmail1">Nomor WA</label>
-											<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nomor WA" value="{{ $bengkel->phonenumber }}" required>
+											<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nomor WA" name="phone" value="{{ $bengkel->phonenumber }}" required>
 										  </div>
-                                          <div class="form-group col-3">
+                                          <div class="form-group col-5">
                                             <label>Jenis Bengkel</label>
-                                            <select class="form-control">
+                                            <select name="jenisbengkel" class="form-control" required>
 												<option selected="true" disabled="disabled" value="">---</option>
-												@foreach ($allJenisBengkel as $jenisBengkel)
-                                              	<option value="{{ $jenisBengkel->id }}">{{ $jenisBengkel->jenis_bengkel }}</option>
+												@foreach ($allJenisBengkel as $jenisbengkel)
+                                              	<option value="{{ $jenisbengkel->id }}">{{ $jenisbengkel->jenis_bengkel }}</option>
 												@endforeach
                                             </select>
                                           </div>
-                                          <div class="form-group col-3">
+										@if ($bengkel->jenisbengkel_id == 1)
+										<span class="bg-info p-2" style="border-radius: 5px;">Jenis Bengkel : Bengkel Motor</span>
+										@else
+										<span class="bg-info p-2" style="border-radius: 5px;">Jenis Bengkel : Bengkel Mobil</span>
+										@endif
+										  <br><br>
+                                          <div class="form-group col-5">
                                             <label>Status Keaktifan Bengkel</label>
-                                            <select class="form-control">
+                                            <select name="status" class="form-control" required>
                                             	<option selected="true" disabled="disabled" value="">---</option>
 												@foreach ($allStatus as $status)
                                             	<option value="{{ $status->id }}">{{ $status->statusbengkel }}</option>
 												@endforeach
                                             </select>
-											<small>Status Keaktifan Bengkel menandakan Waktu Kerja Bengkel, Jika anda Sedang Berlibur, silahkan ubah statusnya ke "Tidak Aktif"</small>
-											<br><br>
-											@if ($bengkel->status_id == 1)
-											<span class="bg-success p-2" style="border-radius: 5px;">Status Bengkel : Aktif</span>
-											@else
-											<span class="bg-danger p-2" style="border-radius: 5px;">Status Bengkel : Tidak Aktif</span>
-											@endif
-                                          </div>
+										</div>
+										<small>Status Keaktifan Bengkel menandakan Waktu Kerja Bengkel, Jika anda Sedang Berlibur, silahkan ubah statusnya ke "Tidak Aktif"</small>
+										<br><br>
+										@if ($bengkel->status_id == 1)
+										<span class="bg-success p-2" style="border-radius: 5px;">Status Bengkel : Aktif</span>
+										@else
+										<span class="bg-danger p-2" style="border-radius: 5px;">Status Bengkel : Tidak Aktif</span>
+										@endif
+										<br><br>
                                         <div class="form-group">
                                             <label for="">Upload Gambar</label>
                                             <div class="custom-file">
-                                              <input type="file" class="custom-file-input" id="customFile">
+                                              <input type="file" name="image" class="custom-file-input" id="customFile">
                                               <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                         </div>
@@ -218,14 +239,19 @@
 												</div>
 											</div>
 											<label for="exampleInputEmail1"></label>
-											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Berupa Latitude dan Longitude" value="{{ $bengkel->maps }}">
+											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
 										  </div>
                                       </div>
                                       <!-- /.card-body -->
                       
-                                      <div class="card-footer row justify-content-end">
-                                        <button type="submit" class="btn btn-primary">Ubah</button>
-                                      </div>
+                                      <div class="row">
+											<div class="card-footer col-6">
+												<button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data anda?')">Hapus</button>
+										  	</div>
+										  	<div class="card-footer col-6 row justify-content-end">
+												<button type="submit" class="btn btn-primary">Ubah</button>
+										  	</div>
+									  </div>
                                     </form>
                                   </div>
 							</section>
@@ -286,6 +312,7 @@
 		<script src="{{ asset('dist/js/demo.js') }}"></script>
 		// <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 		<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+		<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
         <script>
             $(function () {
               bsCustomFileInput.init();
