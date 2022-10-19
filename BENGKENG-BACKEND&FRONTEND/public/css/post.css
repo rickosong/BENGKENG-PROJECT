@@ -1,53 +1,53 @@
 @font-face /*perintah untuk memanggil font eksternal*/ {
-	font-family: "poppins"; /*memberikan nama bebas untuk font*/
-	src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+    font-family: "poppins"; /*memberikan nama bebas untuk font*/
+    src: url("../font/poppins/Poppins-Medium.ttf"); /*memanggil file font eksternalnya di folder nexa*/
 }
 
 @font-face /*perintah untuk memanggil font eksternal*/ {
-	font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
-	src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
+    font-family: "poppins-bold"; /*memberikan nama bebas untuk font*/
+    src: url("../font/poppins/Poppins-Bold.ttf"); /*memanggil file font eksternalnya di folder nexa*/
 }
 
 body {
-	background-color: whitesmoke;
-	font-family: poppins;
-	margin-top: 120px;
-	/* overflow-y: hidden; */
+    background-color: whitesmoke;
+    font-family: poppins;
+    margin-top: 120px;
+    /* overflow-y: hidden; */
 }
 
 ::-webkit-scrollbar {
-	display: none;
+    display: none;
 }
 
 .navbar {
-	background-color: #263571;
+    background-color: #263571;
 }
 
 .navbar-brand img {
-	align-self: center;
-	width: 100px;
-	/* height: 0px; */
-	margin-right: 10px;
-	margin-top: 2px;
+    align-self: center;
+    width: 100px;
+    /* height: 0px; */
+    margin-right: 10px;
+    margin-top: 2px;
 }
 
 li.nav-item {
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 #home {
-	color: #f4b41a;
+    color: #f4b41a;
 }
 
 #btn-search {
-	color: white;
-	background-color: #f4b41a;
+    color: white;
+    background-color: #f4b41a;
 }
 #btn-search:hover {
-	color: white;
-	background-color: #d39810;
+    color: white;
+    background-color: #d39810;
 }
 
 /* li.nav-item:hover {
@@ -56,123 +56,127 @@ li.nav-item {
 } */
 
 a.navbar-brand:hover {
-	transition: 0.5s;
-	text-shadow: 3px 2px 1px white;
+    transition: 0.5s;
+    text-shadow: 3px 2px 1px white;
 }
 a img {
-	width: 35px;
-	height: 35px;
-	margin-top: -5px;
+    width: 35px;
+    height: 35px;
+    margin-top: -5px;
 }
 
 .tombolputih {
-	/* background-color: ; */
-	color: white;
-	font-family: poppins;
+    /* background-color: ; */
+    color: white;
+    font-family: poppins;
 }
 
 #tombolputih:hover {
-	background-color: #111111;
-	color: white;
-	font-family: poppins;
+    background-color: #111111;
+    color: white;
+    font-family: poppins;
 }
 
 #tombolkuning {
-	background-color: #f4b41a;
-	color: white;
+    background-color: #f4b41a;
+    color: white;
 }
 
 #tombolkuning:hover {
-	background-color: #d39810;
-	color: white;
+    background-color: #d39810;
+    color: white;
 }
 
 .nav-link {
-	margin-top: -10px;
+    margin-top: -10px;
 }
 
 a img {
-	width: 35px;
-	height: 35px;
-	margin-top: -5px;
+    width: 35px;
+    height: 35px;
+    margin-top: -5px;
 }
 /* navbar enda */
 
 .gambar img {
-	height: 200px;
-	width: 450px;
-	/* position: ; */
+    height: 200px;
+    width: 450px;
+    /* position: ; */
 }
 
 @media screen and (min-width: 1010px) {
-	.gambar img {
-		height: 400px;
-		width: 900px;
-		/* position: ; */
-	}
+    .gambar img {
+        height: 400px;
+        width: 900px;
+        /* position: ; */
+    }
+
+    ul .dropdown-menu {
+        margin-left: -90px;
+    }
 }
 
 .fasilitas {
-	/* margin-left: 50px; */
-	border: solid 5px;
-	border-color: #ff5722;
-	border-radius: 10px;
+    /* margin-left: 50px; */
+    border: solid 5px;
+    border-color: #ff5722;
+    border-radius: 10px;
 }
 
 .harga {
-	border: none;
-	/* border-color: #ff5722; */
-	padding: 5px;
-	/* border-radius: 10px; */
-	background-color: whitesmoke;
+    border: none;
+    /* border-color: #ff5722; */
+    padding: 5px;
+    /* border-radius: 10px; */
+    background-color: whitesmoke;
 }
 
 .text-start {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .btn-orange {
-	background-color: #ff5722;
-	font: poppins;
-	/* padding-top: 10px; */
-	padding-bottom: 10px;
-	color: white;
+    background-color: #ff5722;
+    font: poppins;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+    color: white;
 }
 
 .button {
-	/* margin-left: 275px; */
-	/* height: 40px; */
-	/* width: 156px; */
-	margin-top: 16px;
-	margin-bottom: 15px;
-	/* margin-right: 1px; */
+    /* margin-left: 275px; */
+    /* height: 40px; */
+    /* width: 156px; */
+    margin-top: 16px;
+    margin-bottom: 15px;
+    /* margin-right: 1px; */
 }
 
 #wa {
-	width: 70px;
-	height: 40px;
+    width: 70px;
+    height: 40px;
 }
 
 .deskripsi {
-	border: solid 2px;
-	border-color: #263571;
-	padding: 15px;
-	border-radius: 10px;
-	height: 432px;
-	overflow: auto;
+    border: solid 2px;
+    border-color: #263571;
+    padding: 15px;
+    border-radius: 10px;
+    height: 432px;
+    overflow: auto;
 }
 .jenis {
-	border: solid 2px;
-	border-color: #263571;
-	padding: 10px;
-	border-radius: 10px;
-	height: 200px;
-	overflow: auto;
+    border: solid 2px;
+    border-color: #263571;
+    padding: 10px;
+    border-radius: 10px;
+    height: 200px;
+    overflow: auto;
 }
 
 #tombolModal {
-	background-color: #263571;
+    background-color: #263571;
 }
 #tombolModal:hover {
-	background-color: #0a122e;
+    background-color: #0a122e;
 }

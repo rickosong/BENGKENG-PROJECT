@@ -30,6 +30,12 @@ body {
 	margin-top: 2px;
 }
 
+@media screen and (min-width: 1010px) {
+	ul .dropdown-menu{
+		margin-left: -90px;
+	}
+}
+
 li.nav-item {
 	margin-left: 10px;
 	margin-right: 10px;

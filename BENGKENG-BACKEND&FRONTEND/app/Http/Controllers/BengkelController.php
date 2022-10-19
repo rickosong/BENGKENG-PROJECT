@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\AllBengkel;
 use App\Models\Bengkel;
 use App\Models\Status;
+use App\Models\User;
 
 class BengkelController extends Controller
 {
@@ -67,6 +68,7 @@ class BengkelController extends Controller
         $bengkel->views = 0;
 
         if ($bengkel->save()) {
+            User::where('id', auth()->user()->id)->update(['havebengkel' => true]);
             return redirect('/dashboardbengkel');
         } else{
             return redirect('/daftarbengkel')->with('daftarError', 'data yang dimasukkan kurang lengkap/tidak sesuai');
@@ -154,6 +156,7 @@ class BengkelController extends Controller
 
         if($bengkel->delete()){
             echo "<script>alert('Data berhasil dihapus')</script>";
+            User::where('id', auth()->user()->id)->update(['havebengkel' => false]);
             return redirect('/home');
         }
         else{

@@ -17,12 +17,16 @@
 					<input class="form-control me-2" type="search" placeholder="Cari Bengkel atau Jasa" aria-label="Search">
 					<a class="btn btn-outline-success" type="submit" id="btn-search" href="{{ route('caribengkel') }}">Cari</a>
 				  </form>
-				<li class="nav-item dropdown active">
+				<li class="nav-item dropdown active" style="">
 					<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<img class="rounded-circle" src="{{ '../img/' }}/{{ auth()->user()->image }}" alt="user photo">
 					  </a>
 					  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						@if (auth()->user()->havebengkel == 1)
+						<li><a class="dropdown-item" href="{{ route('dashboard') }}"><span>Bengkel Anda<i class="fa fa-user-circle" aria-hidden="true"></i></span> </a></li>
+						@else
 						<li><a class="dropdown-item" href="{{ route('daftarbengkel') }}"><span>Buka Bengkel<i class="fa fa-user-circle" aria-hidden="true"></i></span> </a></li>
+						@endif
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="{{ route('profile') }}"><span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Profil</a></li>
 						<li>
