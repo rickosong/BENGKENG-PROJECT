@@ -68,12 +68,12 @@
             <div class="col-lg-12">
                 <div class="card harga">
                     <div class="row">
-						<h1 class=" col-lg-6 col-md-7 col-5 offset-lg-1"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
-						<span class="col-lg-2 col-5 col-md-3 offset-lg-1">
+						<h1 class=" col-lg-6 col-md-7 col-4 offset-lg-1"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
+						<span class="col-lg-2 col-6 col-md-3 offset-lg-1">
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">500</span></button>
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewJelek" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">15</span></button>
 						</span>
-                    <img src="../img/WhatsApp.svg.webp" class=" col-lg-2 col-md-2 col-1" id="wa">
+                    	<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-2 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
 					</div>
                 </div>
             </div>
@@ -131,13 +131,12 @@
 			<!-- modal end -->
 
 			<div class="row">
-                <div class="card deskripsi col-lg-5 col-10 offset-1 mx-auto d-grid gap-2 mb-4">
-                    <h2>DESKRIPSI</h2>
-					<br>
-					{{ $bengkel->deskripsi }}
+                <div class="card deskripsi col-lg-5 col-10 offset-1 mx-auto d-grid gap-2 mb-4 d-flex align-items-stretch">
+                    <h1 class="text-center">DESKRIPSI</h1>
+					<p>{{ $bengkel->deskripsi }}</p>
                 </div>
     
-                <div class="justify-content-start col-lg-3 mx-auto">
+                <div class=" col-lg-3 mx-auto ">
                     <div class="row d-grid gap-2">
 						<div class="col-10 offset-1 card jenis mb-4">
 							<h1 class="text-center">JENIS BENGKEL</h1>
@@ -148,7 +147,7 @@
 								<p>Bengkel Mobil</p>
 							@endif
 						</div>
-						<div class="col-10 offset-1 card jenis mb-4">
+						<div class="col-10 offset-1 card jenis mb-4 d-flex align-items-stretch">
 							<h1 class="text-center">LAYANAN JASA</h1>
 							<br>
 							<p>{{ $bengkel->layananjasa }}</p>
@@ -157,7 +156,7 @@
                 </div>
 				
 
-				<div class="col-10 offset-1 col-lg-3 card deskripsi d-grid gap-3 mx-auto mb-4">
+				<div class="col-10 offset-1 col-lg-3 card deskripsi d-grid gap-3 mx-auto mb-4 d-flex align-items-stretch">
 					<h1 class="text-center">ALAMAT</h1>
 							<p>{{ $bengkel->alamat }}</p>
 				</div>

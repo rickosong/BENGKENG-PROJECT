@@ -153,7 +153,7 @@ a img {
 }
 
 #wa {
-    width: 70px;
+    width: 40px;
     height: 40px;
 }
 
@@ -162,7 +162,7 @@ a img {
     border-color: #263571;
     padding: 15px;
     border-radius: 10px;
-    height: 432px;
+    /* height: 432px; */
     overflow: auto;
 }
 .jenis {
