@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function home()
     {
         return view('user.home', [
-            'Bengkels' => Bengkel::all(),
+            'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
         ]);
     }
 

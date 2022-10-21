@@ -171,7 +171,7 @@
 					<h1 class="text-center">ALAMAT</h1>
 							<p>{{ $bengkel->alamat }}</p>
 				</div>
-				<div class="col-10 offset-1 col-lg-10 offset-lg-1 card deskripsi d-grid gap-3 mx-auto">
+				<div class="col-10 offset-1 col-lg-10 offset-lg-1 card review d-grid gap-3 mx-auto">
 					<h1 class="text-center">REVIEW</h1>
 					@forelse ($allReview as $review)
 					<div class="card p-2" style="background-color: whitesmoke;">

@@ -165,6 +165,16 @@ a img {
     /* height: 432px; */
     overflow: auto;
 }
+.review {
+    border: solid 2px;
+    border-color: #263571;
+    padding: 15px;
+    border-radius: 10px;
+    /* height: 432px; */
+    min-height: 150px;
+    max-height: 500px;
+    overflow: auto;
+}
 .jenis {
     border: solid 2px;
     border-color: #263571;
