@@ -58,7 +58,7 @@
         <!-- post page start -->
         <div class="container-fluid">
 			@if (session()->has('successReview'))
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
 					{{ session('successReview') }}
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
