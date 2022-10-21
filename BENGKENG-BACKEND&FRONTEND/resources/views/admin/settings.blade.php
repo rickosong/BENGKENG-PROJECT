@@ -194,7 +194,7 @@
 										  </div>
                                           <div class="form-group col-5">
                                             <label>Jenis Bengkel</label>
-                                            <select name="jenisbengkel" class="form-control" required>
+                                            <select name="jenisbengkel" class="form-control">
 												<option selected="true" disabled="disabled" value="">---</option>
 												@foreach ($allJenisBengkel as $jenisbengkel)
                                               	<option value="{{ $jenisbengkel->id }}">{{ $jenisbengkel->jenis_bengkel }}</option>
@@ -209,7 +209,7 @@
 										  <br><br>
                                           <div class="form-group col-5">
                                             <label>Status Keaktifan Bengkel</label>
-                                            <select name="status" class="form-control" required>
+                                            <select name="status" class="form-control">
                                             	<option selected="true" disabled="disabled" value="">---</option>
 												@foreach ($allStatus as $status)
                                             	<option value="{{ $status->id }}">{{ $status->statusbengkel }}</option>

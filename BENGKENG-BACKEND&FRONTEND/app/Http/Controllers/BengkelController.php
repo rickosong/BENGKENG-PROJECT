@@ -7,6 +7,7 @@ use App\Models\AllBengkel;
 use App\Models\Bengkel;
 use App\Models\Status;
 use App\Models\User;
+use App\Models\Review;
 
 class BengkelController extends Controller
 {
@@ -17,7 +18,24 @@ class BengkelController extends Controller
      */
     public function index()
     {
-        return view('admin.index', [
+        // Ambil id Bengkel
+        $bengkels = Bengkel::where('user_id', auth()->user()->id)->get();
+        $bengkel = $bengkels[0];
+        $idBengkel = $bengkel->id;
+        $viewsBengkel = $bengkel->views;
+        // return dump($idBengkel);
+
+        // Ambil Semua jenis like, dislike, views, dan review disertai komentar yang bengkel_id nya sama dengan id bengkel yang lagi login
+        $likes = Review::where('rating_id', 1)->where('bengkel_id', $idBengkel)->get();
+        $dislikes = Review::where('rating_id', 2)->where('bengkel_id', $idBengkel)->get();
+        $withComment = Review::where('komentar', '!=',  null)->where('bengkel_id', $idBengkel)->get();
+
+        // hitung like, dislike dan review disertai komentar
+        $likesCount = $likes->count();
+        $dislikesCount = $dislikes->count();
+        $withCommentCount = $withComment->count();
+
+        return view('admin.index', compact('likesCount', 'dislikesCount', 'withCommentCount', 'viewsBengkel'), [
             'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
         ]);
     }
@@ -121,8 +139,8 @@ class BengkelController extends Controller
         $bengkel->alamat  =  $request->alamat;
         $bengkel->layananjasa  =  $request->layananjasa;
         $bengkel->phonenumber  =  $request->phone;
-        $bengkel->jenisbengkel_id = $request->jenisbengkel;
-        $bengkel->status_id  =  $request->status;
+        // $bengkel->jenisbengkel_id = $request->jenisbengkel;
+        // $bengkel->status_id  =  $request->status;
         $bengkel->maps = $request->maps;
 
         if ($request->hasFile('image')) {
@@ -133,6 +151,20 @@ class BengkelController extends Controller
             $bengkel->image = $imageName;
         } else {
             $bengkel->image = $bengkel->image;
+        }
+
+        if ($request->has('jenisbengkel')) {
+            
+            $bengkel->jenisbengkel_id = $request->jenisbengkel;
+        } else {
+            $bengkel->jenisbengkel_id = $bengkel->jenisbengkel_id;
+        }
+
+        if ($request->has('status')) {
+            
+            $bengkel->status_id = $request->status;
+        } else {
+            $bengkel->status_id = $bengkel->status_id;
         }
 
         if ($bengkel->save()) {
