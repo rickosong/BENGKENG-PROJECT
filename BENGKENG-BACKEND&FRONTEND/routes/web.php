@@ -25,6 +25,7 @@ Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('
 Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name('bengkelterdekat')->middleware('auth');
 Route::get('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel')->middleware('auth');
 Route::get('/bengkelpost/{bengkel:id}', [HomeController::class, 'post'])->name('post')->middleware('auth');
+Route::post('/reviewbengkel/{bengkel:id}', [HomeController::class, 'postreview'])->name('uploadreview');
 
 // Profile User
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');

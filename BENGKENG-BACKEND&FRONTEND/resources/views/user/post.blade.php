@@ -56,8 +56,13 @@
 		<!-- navbar end -->
 
         <!-- post page start -->
-
         <div class="container-fluid">
+			@if (session()->has('successReview'))
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					{{ session('successReview') }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			@endif
             <div class="row">
                 <div class="gambar text-center">
                     <img src="{{ '../img' }}/{{ $bengkel->image }}" class="col-lg-12" alt="">
@@ -68,12 +73,12 @@
             <div class="col-lg-12">
                 <div class="card harga">
                     <div class="row">
-						<h1 class=" col-lg-6 col-md-7 col-4 offset-lg-1"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
-						<span class="col-lg-2 col-6 col-md-3 offset-lg-1">
-							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">500</span></button>
+						<h1 class=" col-lg-7 col-md-6 col-5"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
+						<span class="col-lg-4 col-5 col-md-4">
+							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">50</span></button>
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewJelek" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">15</span></button>
 						</span>
-                    	<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-2 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
+                    	<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-1 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
 					</div>
                 </div>
             </div>
@@ -88,19 +93,23 @@
 					<h5 class="modal-title" id="exampleModalLabel">Anda Menyukai Bengkel Ini</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
-						<p class="text-center"><i class="fa fa-thumbs-up text-success fa-4x"></i></p>
-					<form action="">
-						<div class="mb-3">
-							<label for="message-text" class="col-form-label">Berikan Komen (bisa dilewati)</label>
-							<textarea class="form-control" id="message-text" placeholder="Jelaskan Kenapa Anda Menyukai Bengkel ini"></textarea>
-						  </div>
+					<form action="{{ route('uploadreview', $bengkel->id) }}" method="POST">
+						@csrf
+						<div class="modal-body">
+							<p class="text-center"><i class="fa fa-thumbs-up text-success fa-4x"></i></p>
+							<div class="mb-3">
+								<input type="hidden" name="idrating" value="1">
+								<label for="message-text" class="col-form-label">Berikan Komen (Opsional)</label>
+								<textarea class="form-control" name="reviewtext" id="message-text" placeholder="Jelaskan Kenapa Anda Menyukai Bengkel ini"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-warning" data-bs-dismiss="modal">Keluar</button>
+							<button type="submit" class="btn btn-primary" id="tombolModal">Kirim</button>
+						</div>	
 					</form>
-					</div>
-					<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-bs-dismiss="modal">Keluar</button>
-					<button type="button" class="btn btn-primary" id="tombolModal">Kirim</button>
-					</div>
+					
+					
 				</div>
 				</div>
 			</div>
@@ -112,19 +121,21 @@
 					<h5 class="modal-title" id="exampleModalLabel">Anda TIdak Menyukai Bengkel Ini</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
-					<form action="">
-						<p class="text-center"><i class="fa fa-thumbs-down text-danger fa-4x"></i></p>
-						<div class="mb-3">
-							<label for="message-text" class="col-form-label">Berikan Komen (bisa dilewati)</label>
-							<textarea class="form-control" id="message-text" placeholder="Jelaskan Kenapa Anda Tidak Menyukai Bengkel ini"></textarea>
-						  </div>
+					<form action="{{ route('uploadreview', $bengkel->id) }}" method="POST">
+						@csrf
+						<div class="modal-body">
+							<p class="text-center"><i class="fa fa-thumbs-down text-danger fa-4x"></i></p>
+							<div class="mb-3">
+								<input type="hidden" name="idrating" value="2">
+								<label for="message-text" class="col-form-label">Berikan Komen (Opsional)</label>
+								<textarea class="form-control" name="reviewtext" id="message-text" placeholder="Jelaskan Kenapa Anda Tidak Menyukai Bengkel ini"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-warning" data-bs-dismiss="modal">Keluar</button>
+							<button type="submit" class="btn btn-primary" id="tombolModal">Kirim</button>
+						</div>
 					</form>
-					</div>
-					<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-bs-dismiss="modal">Keluar</button>
-					<button type="button" class="btn btn-primary" id="tombolModal">Kirim</button>
-					</div>
 				</div>
 				</div>
 			</div>
@@ -162,16 +173,21 @@
 				</div>
 				<div class="col-10 offset-1 col-lg-10 offset-lg-1 card deskripsi d-grid gap-3 mx-auto">
 					<h1 class="text-center">REVIEW</h1>
+					@forelse ($allReview as $review)
 					<div class="card p-2" style="background-color: whitesmoke;">
-						<h5 class="p-2"><span><img src="../img/person-circle.svg" alt="" class="img-circle me-2" style="width: 45px; height: 45px;"></span> Nama<span class="btn btn-success me-3 ms-3"><i class="fa fa-thumbs-up fa-lg me-3"></i></span></h5>
+						<h5 class="p-2"><span><img src="{{ '../img' }}/{{ $review->User->image }}" alt="" class="img-circle me-2" style="width: 45px; height: 45px;"></span> {{ $review->User->name }}
+							@if ($review->rating_id == 1)
+								<span class="btn btn-success me-3 ms-3"><i class="fa fa-thumbs-up fa-lg me-3"></i></span>
+							@else
+							<span class="btn btn-danger me-3 ms-3"><i class="fa fa-thumbs-down fa-lg me-3"></i></span>
+							@endif
+						</h5>
 						
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quibusdam recusandae tempore commodi rem doloribus quidem odio quo eos autem nostrum architecto laudantium, aperiam ea ab dolor iure tenetur velit.</p>
+						<p>{{ $review->komentar }}</p>
 					</div>
-					<div class="card p-2" style="background-color: whitesmoke;">
-						<h5 class="p-2"><span><img src="../img/person-circle.svg" alt="" class="img-circle me-2" style="width: 45px; height: 45px;"></span> Nama<span class="btn btn-danger me-3 ms-3"><i class="fa fa-thumbs-down fa-lg me-3"></i></span></h5>
-						
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quibusdam recusandae tempore commodi rem doloribus quidem odio quo eos autem nostrum architecto laudantium, aperiam ea ab dolor iure tenetur velit.</p>
-					</div>
+					@empty
+						<p class="text-center text-secondary">Bengkel ini masih belum mempunyai Review.</p>
+					@endforelse
 				</div>
             </div>
         </div>

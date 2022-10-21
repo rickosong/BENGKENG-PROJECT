@@ -100,14 +100,14 @@ a img {
 
 .gambar img {
     height: 200px;
-    width: 450px;
-    /* position: ; */
+    width: fit-content;
+    /* position: static; */
 }
 
 @media screen and (min-width: 1010px) {
     .gambar img {
         height: 400px;
-        width: 900px;
+        width: fit-content;
         /* position: ; */
     }
 

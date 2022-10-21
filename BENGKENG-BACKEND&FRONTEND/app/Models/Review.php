@@ -13,7 +13,7 @@ class Review extends Model
         'user_id',
         'bengkel_id',
         'rating_id',
-        'review',
+        'komentar',
     ];
 
     public function User(){

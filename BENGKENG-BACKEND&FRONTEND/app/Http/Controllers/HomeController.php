@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bengkel;
+use App\Models\Review;
 
 class HomeController extends Controller
 {
@@ -57,6 +58,7 @@ class HomeController extends Controller
 
         return view('user.post', [
             'bengkel' => $bengkel,
+            'allReview' => Review::where('bengkel_id', $id)->get(),
         ]);
     }
 
@@ -68,7 +70,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+
     }
 
     /**
@@ -78,9 +81,21 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function postreview(Request $request, $id)
     {
-        //
+        $review = New Review;
+
+        $review->user_id = auth()->user()->id;
+        $review->bengkel_id = $id;
+        $review->rating_id = $request->idrating;
+        $review->komentar = $request->reviewtext;
+
+        if ($review->save()) {
+            return back()->with('successReview', 'Review Anda Kami Terima, Terimakasih!');
+        } else{
+            return back()->with('errorReview', 'Ada Kesalahan dalam review anda');
+        }
+
     }
 
     /**
