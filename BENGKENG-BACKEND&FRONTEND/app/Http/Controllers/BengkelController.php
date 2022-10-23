@@ -37,13 +37,20 @@ class BengkelController extends Controller
 
         return view('admin.index', compact('likesCount', 'dislikesCount', 'withCommentCount', 'viewsBengkel'), [
             'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
+            'reviews' => Review::where('bengkel_id', $idBengkel)->paginate(5),
         ]);
     }
 
     public function review()
     {
+        // Ambil id Bengkel
+        $bengkels = Bengkel::where('user_id', auth()->user()->id)->get();
+        $bengkel = $bengkels[0];
+        $idBengkel = $bengkel->id;
+
         return view('admin.review', [
             'bengkelan' => Bengkel::where('user_id', auth()->user()->id)->get(),
+            'reviews' => Review::where('bengkel_id', $idBengkel)->get(),
         ]);
     }
 

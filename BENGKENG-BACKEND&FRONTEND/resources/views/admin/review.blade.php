@@ -153,62 +153,31 @@
 								<div class="card">
 									<div class="direct-chat-messages" style="height: 450px;">
 										<!-- Message. Default to the left -->
-										<div class="direct-chat-msg">
-											<div class="direct-chat-infos clearfix">
-												<span class="direct-chat-name float-left">Alexander Pierce</span>
-												<!-- <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span> -->
+										@forelse ($reviews as $review)
+											<div class="direct-chat-msg">
+												<div class="direct-chat-infos clearfix">
+													<span class="direct-chat-name float-left">{{ $review->User->name }}</span>
+													<!-- <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span> -->
+												</div>
+												<!-- /.direct-chat-infos -->
+												<img class="direct-chat-img" src="{{ '../img' }}/{{ $review->User->image }}" alt="message user image" />
+												<!-- /.direct-chat-img -->
+												@if ($review->rating_id == 1)
+												<div class="direct-chat-text bg-success">
+													<i class="ion ion-thumbsup"></i>
+												@else
+												<div class="direct-chat-text bg-danger">
+													<i class="ion ion-thumbsdown"></i>
+												@endif
+													{{ $review->komentar }}
+													<br>
+													<small class="text-left">{{ $review->created_at }}</small>
+												</div>
+												<!-- /.direct-chat-text -->
 											</div>
-											<!-- /.direct-chat-infos -->
-											<img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
-											<!-- /.direct-chat-img -->
-											<div class="direct-chat-text bg-success">
-												<i class="ion ion-thumbsup"></i>
-												Keren Banget, udah coba servis motor disini dan hasilnya bagus dan memuaskan banget!
-											</div>
-											<!-- /.direct-chat-text -->
-										</div>
-										<div class="direct-chat-msg">
-											<div class="direct-chat-infos clearfix">
-												<span class="direct-chat-name float-left">Mohammad Ricko Aprilianto</span>
-												<!-- <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span> -->
-											</div>
-											<!-- /.direct-chat-infos -->
-											<img class="direct-chat-img" src="img/photo example.jpg" alt="message user image" />
-											<!-- /.direct-chat-img -->
-											<div class="direct-chat-text bg-success">
-												<i class="ion ion-thumbsup"></i>
-												Bagus
-											</div>
-											<!-- /.direct-chat-text -->
-										</div>
-										<div class="direct-chat-msg">
-											<div class="direct-chat-infos clearfix">
-												<span class="direct-chat-name float-left">Zoya Nujula Ramadhoni</span>
-												<!-- <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span> -->
-											</div>
-											<!-- /.direct-chat-infos -->
-											<img class="direct-chat-img" src="img/person-circle.svg" alt="message user image" />
-											<!-- /.direct-chat-img -->
-											<div class="direct-chat-text bg-danger">
-												<i class="ion ion-thumbsdown"></i>
-												Pernah servis disini, tapi hasilnya kurang memuaskan, kecewa.
-											</div>
-											<!-- /.direct-chat-text -->
-										</div>
-										<div class="direct-chat-msg">
-											<div class="direct-chat-infos clearfix">
-												<span class="direct-chat-name float-left">Muhammad Irfan Akbar</span>
-												<!-- <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span> -->
-											</div>
-											<!-- /.direct-chat-infos -->
-											<img class="direct-chat-img" src="img/person-circle.svg" alt="message user image" />
-											<!-- /.direct-chat-img -->
-											<div class="direct-chat-text bg-danger">
-												<i class="ion ion-thumbsdown"></i>
-												Jelek
-											</div>
-											<!-- /.direct-chat-text -->
-										</div>
+											@empty
+												<p class="text-center">masih tidak review yg diberikan</p>
+											@endforelse
 										<!-- /.direct-chat-msg -->
 									</div>
 								</div>
