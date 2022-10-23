@@ -26,7 +26,8 @@
 
 			<section class="row justify-content-center">
 				<section class="col-sm-12 col-lg-5 col-md-12">
-					<form class="form-container">
+					<form class="form-container" action="{{ route('forgotpassword') }}" method="POST">
+						@csrf
 						<div class="form-group mb-3">
 							<div class="text-center">
 								<img src="../img/BENGKENG PROJECT.png" style="width: 100px; height: 100px" alt="" />
@@ -34,15 +35,13 @@
 							<h2>FORGOT PASSWORD</h2>
 							<!-- <br /><br /> -->
 							<label for="email" class="teks-kolom">Email :</label>
-							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" />
+							<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" />
 							<br />
-							<a href="login.html"><small class="text-cl-sm">Kembali</small></a>
+							<a href="{{ route('login') }}"><small class="text-cl-sm">Kembali</small></a>
 						</div>
 						<br />
 						<div class="d-grid gap-2">
-							<a href="forgotpass.html" class="btn tombol" id="tombol" type="submit"
-								><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Cari</a
-							>
+							<button class="btn tombol" id="tombol" type="submit"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Cari</button>
 						</div>
 					</form>
 					<br /><br /><br />

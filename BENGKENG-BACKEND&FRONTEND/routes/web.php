@@ -40,6 +40,9 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register')-
 Route::post('/upload-register', [RegisterController::class, 'store'])->name('storeregister');
 Route::get('daftarbengkel', [BengkelController::class, 'create'])->name('daftarbengkel')->middleware('auth');
 Route::post('buat-bengkel', [BengkelController::class, 'store'])->name('buatbengkel');
+Route::get('/searchemail', [ForgotPasswordController::class, 'index'])->name('searchemail')->middleware('guest');
+Route::post('/forgotpassword', [ForgotPasswordController::class, 'edit'])->name('forgotpassword')->middleware('guest');
+Route::put('/changepassword/{user:id}', [ForgotPasswordController::class, 'update'])->name('changepassword');
 
 // Admin Bengkel Page
 Route::get('dashboardbengkel', [BengkelController::class, 'index'])->name('dashboard')->middleware('auth');

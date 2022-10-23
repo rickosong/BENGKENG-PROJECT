@@ -43,6 +43,12 @@
 							  		{{ session('success') }}
 								</div>
 							@endif
+							@if(session()->has('successUpdatePass'))
+								<div class="alert alert-success alert-dismissible fade show" role="alert">
+									{{ session('successUpdatePass') }}
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							@endif
 							<!-- <br /><br /> -->
 							<label for="email" class="teks-kolom">Email :</label>
 							<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" required />
@@ -54,7 +60,7 @@
 							<br />
 							<a href="{{ route('register') }}"><small class="text-cl-sm">Gak punya akun? Daftar Sekarang!</small></a
 							><br />
-							<a href="searchemail.html"><small class="text-cl-sm">Forgot Password?</small></a>
+							<a href="{{ route('searchemail') }}"><small class="text-cl-sm">Forgot Password?</small></a>
 						</div>
 						<br />
 						<div class="d-grid gap-2">

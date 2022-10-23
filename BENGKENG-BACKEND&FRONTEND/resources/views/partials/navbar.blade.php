@@ -14,8 +14,8 @@
 					<a class="nav-link active" href="{{ route('bengkelterdekat') }}">Bengkel Terdekat</a>
 				</li>
 				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Cari Bengkel atau Jasa" aria-label="Search">
-					<a class="btn btn-outline-success" type="submit" id="btn-search" href="{{ route('caribengkel') }}">Cari</a>
+					<input class="form-control-sm me-2" type="search" placeholder="Cari Bengkel atau Jasa" aria-label="Search" style="height: 42px">
+					<a class="btn btn-outline-success" type="submit" style="height: 42px"  id="btn-search" href="{{ route('caribengkel') }}">Cari</a>
 				  </form>
 				<li class="nav-item dropdown active" style="">
 					<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ForgotPasswordController extends Controller
 {
@@ -13,7 +14,7 @@ class ForgotPasswordController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.searchemail');
     }
 
     /**
@@ -54,9 +55,19 @@ class ForgotPasswordController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $user = User::whereEmail($request->email)->first();
+
+        // dd($user);
+
+        if ($user == null) {
+            return redirect()->back()->with(['noUser' => 'User tidak ada / belum terdatar, silahkan daftar dulu']);
+        }
+
+        return view('auth.forgotpass', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -68,7 +79,24 @@ class ForgotPasswordController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        
+
+        $password = $request->password;
+        $confirmPass = $request->confirmpassword;
+
+        if ($confirmPass !== $password) {
+            return back()->with('error', 'Gagal mengganti passwrod. Pastikan password sama dengan konfirmasi password');
+            return false;
+        }
+
+        $password = bcrypt($request->password);
+
+        $user->password = $password;
+
+        $user->update();
+        $request->session()->flash('successUpdatePass', 'Password Berhasil Dirubah, silahkan login');
+        return redirect('/login');
     }
 
     /**

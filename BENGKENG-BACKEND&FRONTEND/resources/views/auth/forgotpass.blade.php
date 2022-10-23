@@ -26,28 +26,29 @@
 
 			<section class="row justify-content-center">
 				<section class="col-sm-12 col-lg-5 col-md-12">
-					<form class="form-container">
+					<form class="form-container" action="{{ route('changepassword', $user->id) }}" method="POST">
+						@csrf
+						@method('PUT')
 						<div class="form-group mb-3">
 							<div class="text-center">
 								<img src="../img/BENGKENG PROJECT.png" alt="" style="width: 100px; height: 100px" />
 							</div>
 							<h2>FORGOT PASSWORD</h2>
 							<!-- <br /><br /> -->
+							<p class="text-center text-light">Halo {{ $user->name }}, silahkan ubah password anda</p>
 							<label for="password" class="teks-kolom">Password :</label>
-							<input type="password" class="form-control" placeholder="Masukkan Password Anda" />
+							<input type="password" class="form-control" name="password" placeholder="Masukkan Password Anda" />
 							<br />
 						</div>
 						<div class="form-group mb-3">
 							<label for="confirmpassword" class="teks-kolom">Konfirmasi Password :</label>
-							<input type="password" class="form-control" id="confirmpassword" placeholder="Konfirmasi Password Anda" />
+							<input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Konfirmasi Password Anda" />
 							<br />
-							<a href="login.html"><small class="text-cl-sm">Kembali</small></a>
+							<a href="{{ route('login') }}"><small class="text-cl-sm">Kembali</small></a>
 						</div>
 						<br />
 						<div class="d-grid gap-2">
-							<a href="home.html" class="btn tombol" id="tombol" type="submit"
-								><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Ubah</a
-							>
+							<button class="btn tombol" id="tombol" type="submit"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Ubah</button>
 						</div>
 					</form>
 					<br /><br /><br />
