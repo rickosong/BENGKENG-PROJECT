@@ -63,9 +63,12 @@
 							<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Konfirmasi Password Anda" required value="{{ old('confirmpassword') }}" />
 						</div>
 						<br />
-						<div class="form-group mb-3">
-							<label for="number" class="teks-kolom">Nomor HP :</label>
-							<input type="number" class="form-control" id="number" name="phone"  placeholder="Masukkan Nomor HP Anda" required value="{{ old('phone') }}" />
+						<div class="  form-group mb-3">
+							<label for="number" class="teks-kolom form-label">Nomor HP :</label>
+							<div class="input-group">
+								<span class="input-group-text">62</span>
+								<input type="number" class="form-control" id="number" name="phone"  placeholder="Masukkan Nomor HP Anda" required value="{{ old('phone') }}" />
+							</div>
 							<br />
 							<a href="{{ route('login') }}"><small class="text-cl-sm">Udah punya akun? Login Sekarang Yuk!</small></a>
 						</div>

@@ -71,7 +71,10 @@
 						<br />
 						<div class="form-group mb-3">
 							<label for="number" class="teks-kolom">Nomor HP :</label>
-							<input type="number" class="form-control" id="number" name="phone" placeholder="Masukkan Nomor HP Anda" value="{{ old('phone') }} />
+							<div class="input-group">
+								<span class="input-group-text">62</span>
+								<input type="number" class="form-control" id="number" name="phone"  placeholder="Masukkan Nomor HP Anda" required value="{{ old('phone') }}" />
+							</div>
 						</div>
 						<br />
 						<div class="form-group mb-3">
