@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignId('status_id')->constrained('statuses');
             $table->string('maps');
             $table->string('image');
-            $table->string('views');
+            $table->integer ('views');
             $table->timestamps();
         });
     }

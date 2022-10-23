@@ -55,7 +55,10 @@ class HomeController extends Controller
     public function post($id)
     {
         $bengkel = Bengkel::find($id);
+        $viewsBengkel = $bengkel->views;
 
+        Bengkel::where('id', $id)->update(['views' => $viewsBengkel + 1]);
+        
         return view('user.post', [
             'bengkel' => $bengkel,
             'allReview' => Review::where('bengkel_id', $id)->get(),

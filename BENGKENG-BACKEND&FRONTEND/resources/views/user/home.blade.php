@@ -54,7 +54,7 @@
 				@forelse ($Bengkels as $bengkel)
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
 					<div class="card h-auto">
-						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." />
+						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." loaded="lazy" />
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
 							<h6 class="distance">500 meter dari jarak anda</h4>
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 				@empty
-					<p>tidak ada bengkel</p>
+					<h5 class="text-center text-secondary">tidak ada bengkel yang ada di section ini</h5>
 				@endforelse ($collection as $item)
 
 			<br><br>
