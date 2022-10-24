@@ -26,6 +26,12 @@
 		<link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" />
 		<!-- summernote -->
 		<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+		integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+		crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+		integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+		crossorigin=""></script>
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
@@ -233,13 +239,13 @@
                                         </div>
 										<div class="form-group">
 											<!-- Maps -->
-											<div class="container maps">
-												<div class="ratio ratio-4x3">
-													<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.219741083949!2d114.5797416143369!3d-3.2956885420470527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423a80d47ba6b%3A0x8f5abfaddfe5a2d7!2sPoliteknik%20Negeri%20Banjarmasin!5e0!3m2!1sid!2sid!4v1664202111369!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-												</div>
+											<div class="container maps row col-6" id="map" style="height: 360px">
+												{{-- <div class="ratio ratio-4x3" id="map" style="180px">
+													<iframe width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+												</div> --}}
 											</div>
 											<label for="exampleInputEmail1"></label>
-											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
+											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" id="latLng" value="{{ $bengkel->maps }}">
 										  </div>
                                       </div>
                                       <!-- /.card-body -->
@@ -299,10 +305,10 @@
 		<script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js') }}" ></script>
 		<script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 		<!-- jQuery Knob Chart -->
-		<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></sc>
+		<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 		// <!-- daterangepicker -->
 		 <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-		<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script> --}}
+		<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script> 
 		// <!-- Tempusdominus Bootstrap 4 -->
 		<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 		// <!-- Summernote -->
@@ -320,12 +326,25 @@
             $(function () {
               bsCustomFileInput.init();
             });
-            </script>
-    <script type="application/javascript">
-        $('input[type="file"]').change(function(e){
-            var fileName = e.target.files[0].name;
-            $('.custom-file-label').html(fileName);
-        });
-    </script>
+        </script>
+		<script type="application/javascript">
+				$('input[type="file"]').change(function(e){
+					var fileName = e.target.files[0].name;
+					$('.custom-file-label').html(fileName);
+				});
+		</script>
+		<script>
+			// make map with [latitude, longitude]
+			var map = L.map('map').setView([-3.289769,114.6042077,18], 13);
+
+			// add open street map
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    		maxZoom: 19,
+    		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			}).addTo(map);
+
+			// add marker
+			var marker = L.marker([-3.2895989,114.6038239,21]).addTo(map);
+		</script>
 	</body>
 </html>
