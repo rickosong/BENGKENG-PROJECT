@@ -30,9 +30,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function caribengkel()
+    public function caribengkel(Request $request)
     {
-        return view('user.caribengkel');
+        $cari = $request->cari;
+
+        $hasil = Bengkel::where('namabengkel', 'like', "%" . $cari . "%")->get();
+
+        return view('user.caribengkel', [
+            'Hasil' => $hasil,
+            'cari' => $cari,
+        ]);
     }
 
     /**
@@ -43,7 +50,9 @@ class HomeController extends Controller
      */
     public function bengkelterdekat()
     {
-        return view('user.bengkelterdekat');
+        return view('user.bengkelterdekat', [
+            'Bengkels' => Bengkel::all(),
+        ]);
     }
 
     /**
