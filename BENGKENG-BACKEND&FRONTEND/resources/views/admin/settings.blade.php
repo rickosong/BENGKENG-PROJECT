@@ -29,9 +29,12 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
 		integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
 		crossorigin=""/>
-		<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-		integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-		crossorigin=""></script>
+		<script type="application/javascript">
+			$('input[type="file"]').change(function(e){
+				var fileName = e.target.files[0].name;
+				$('.custom-file-label').html(fileName);
+			});
+	</script>
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
@@ -245,7 +248,7 @@
 												</div> --}}
 											</div>
 											<label for="exampleInputEmail1"></label>
-											<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" id="latLng" value="{{ $bengkel->maps }}">
+											<input class="form-control" id="exampleInputEmail1 coordinat" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
 										  </div>
                                       </div>
                                       <!-- /.card-body -->
@@ -322,20 +325,17 @@
 		// <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 		<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 		<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+		<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+		integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+		crossorigin=""></script>
         <script>
             $(function () {
               bsCustomFileInput.init();
             });
         </script>
-		<script type="application/javascript">
-				$('input[type="file"]').change(function(e){
-					var fileName = e.target.files[0].name;
-					$('.custom-file-label').html(fileName);
-				});
-		</script>
 		<script>
 			// make map with [latitude, longitude]
-			var map = L.map('map').setView([-3.289769,114.6042077,18], 13);
+			var map = L.map('map').setView([{{ $bengkel->maps }}], 16);
 
 			// add open street map
 			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -343,8 +343,27 @@
     		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			}).addTo(map);
 
-			// add marker
-			var marker = L.marker([-3.2895989,114.6038239,21]).addTo(map);
+			// get coordinat location
+			var latLngInput = document.querySelector("[name=maps]");
+
+			var curLocation = [{{ $bengkel->maps }}];
+
+			map.attributionControl.setPrefix(false);
+
+			var marker = new L.marker (curLocation, {
+				draggable: 'true',
+			});
+
+			marker.on('dragend', function(event) {
+				var position = marker.getLatLng();
+				marker.setLatLng(position, {
+					draggable : 'true',
+				}).bindPopup(position).update();
+				$("#coordinat").val(position.lat);
+			});
+
+			map.addLayer(marker);
+
 		</script>
 	</body>
 </html>
