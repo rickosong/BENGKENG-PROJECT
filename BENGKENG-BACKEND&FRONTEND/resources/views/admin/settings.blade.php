@@ -248,7 +248,7 @@
 												</div> --}}
 											</div>
 											<label for="exampleInputEmail1"></label>
-											<input class="form-control" id="exampleInputEmail1 coordinat" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
+											<input class="form-control" id="coordinat" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
 										  </div>
                                       </div>
                                       <!-- /.card-body -->
@@ -325,6 +325,7 @@
 		// <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 		<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 		<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+		<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
 		integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
 		crossorigin=""></script>
@@ -357,12 +358,25 @@
 			marker.on('dragend', function(event) {
 				var position = marker.getLatLng();
 				marker.setLatLng(position, {
-					draggable : 'true',
+					draggable: 'true',
 				}).bindPopup(position).update();
-				$("#coordinat").val(position.lat);
+				$("#coordinat").val(position.lat + "," + position.lng);
 			});
 
 			map.addLayer(marker);
+
+			map.on('click', function(e) {
+				var lat = e.latlng.lat;
+				var lng = e.latlng.lng;
+				if (!marker) {
+					marker = L.marker(e.latlng).addTo(map);
+				} else {
+					marker.setLatLng(e.latlng);
+				}
+				latLngInput.value = lat + "," + lng;
+			});
+
+			map.addLayer(map);
 
 		</script>
 	</body>
