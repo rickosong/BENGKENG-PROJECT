@@ -248,7 +248,7 @@
 												</div> --}}
 											</div>
 											<label for="exampleInputEmail1"></label>
-											<input class="form-control" id="coordinat" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}">
+											<input class="form-control" id="coordinat" placeholder="Lokasi Berupa Latitude dan Longitude" name="maps" value="{{ $bengkel->maps }}" readonly>
 										  </div>
                                       </div>
                                       <!-- /.card-body -->
@@ -375,8 +375,6 @@
 				}
 				latLngInput.value = lat + "," + lng;
 			});
-
-			map.addLayer(map);
 
 		</script>
 	</body>
