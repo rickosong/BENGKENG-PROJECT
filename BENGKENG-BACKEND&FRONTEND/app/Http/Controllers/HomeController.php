@@ -15,7 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.landing');
+        return view('user.landing', [
+            'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
+        ]);
     }
 
     public function home()

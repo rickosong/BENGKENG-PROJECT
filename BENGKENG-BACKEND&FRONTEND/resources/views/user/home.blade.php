@@ -12,9 +12,11 @@
 	</head>
 	<body>
 		<!-- alert bergabung -->
-		<div class="alert alert-success text-center text-success" role="alert">
-			Anda Punya Bengkel? <strong><a href="" class="text-success">Yuk Bergabung Bersama Kami Sekarang!</a></strong>
+		@if (auth()->user()->havebengkel == 0)
+			<div class="alert alert-success text-center text-success" role="alert">
+				Anda Punya Bengkel? <strong><a href="{{ route('daftarbengkel') }}" class="text-success">Yuk Bergabung Bersama Kami Sekarang!</a></strong>
 		  </div>
+		@endif
 		<!-- alert bergabung end -->
 
 		@include('partials.navbar')
