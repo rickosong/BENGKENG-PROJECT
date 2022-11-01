@@ -34,7 +34,7 @@
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
 							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 						</div>
 					</div>
 				</div>

@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 		<link rel="stylesheet" href="../css/home.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+		integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+		crossorigin=""/>
 		<link rel="shortcut icon" href="../img/BENGKENG PROJECT.png" type="image/x-icon" />
 		<title>BENGKENG | HOMEPAGE</title>
 	</head>
@@ -59,8 +62,8 @@
 						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." laoding="lazy" />
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							<h6 class="distance" id="distance">500 meter dari jarak anda</h4>
+							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -68,55 +71,56 @@
 					<h5 class="text-center text-secondary">tidak ada bengkel yang ada di section ini</h5>
 				@endforelse ($collection as $item)
 
-			<br><br>
-			<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>
-			<br><br>
-			<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
-			<div class="row">
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 1</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+				<br><br>
+				<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>
+				<br><br>
+				<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
+						<div class="card h-auto">
+							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+							<div class="card-body">
+								<h5 class="card-title m-1">Bengkel 1</h5>
+								<h6 class="distance">500 meter dari jarak anda</h4>
+								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 2</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
+						<div class="card h-auto">
+							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+							<div class="card-body">
+								<h5 class="card-title m-1">Bengkel 2</h5>
+								<h6 class="distance">500 meter dari jarak anda</h4>
+								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card h-auto">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 3</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
+						<div class="card h-auto">
+							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+							<div class="card-body">
+								<h5 class="card-title m-1">Bengkel 3</h5>
+								<h6 class="distance">500 meter dari jarak anda</h4>
+								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-					<div class="card">
-						<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title m-1">Bengkel 4</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
+						<div class="card">
+							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+							<div class="card-body">
+								<h5 class="card-title m-1">Bengkel 4</h5>
+								<h6 class="distance">500 meter dari jarak anda</h4>
+								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>		
+				</div>		
+			</div>
 		</div>
 		<!-- card and content -->
 		<br><br><br><br><br><br><br><br>
@@ -144,12 +148,49 @@
 				</div>
 			</div>
 		</div>
-	<!-- Footer End -->
+		<!-- Footer End -->
 
 		<!-- jQuery -->
 		<script src="../js/jquery-3.6.0.min.js"></script>
 		<!-- <script src="../js/popper.min.js"></script> -->
 		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+		integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+		crossorigin=""></script>
+		<script>
+			// ambil lokasi terkini
+			getlocation();
+			setInterval(() => {
+				getlocation();
+			}, 3000);
+			
+			function getlocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHtml = "browser not supported"
+				}
+			}
+
+			function showPosition(position) {
+				console.log('Koordinatnya adalah', position.coords.latitude,position.coords.longitude);
+			}
+
+			function createMarker() {
+				var locationFrom = [navigator.geolocation.getCurrentPosition(showPosition)];
+				var locationTo =  L.circleMarker([18.9750,72.8258], { color: "#4AFF00", radius: 10 });
+				var from = markerFrom.getLatLng();
+				var to = markerTo.getLatLng();
+				locationFrom.bindPopup((from).toString());
+				locationTo.bindPopup((to).toString());
+				getDistance(from, to);
+			}
+
+			function getDistance(from, to) {
+				var container = document.getElementById('distance');
+				container.innerHTML = ((from.distanceTo(to)).toFixed(0)/1000) + ' meter dari jarak anda';
+			}
+		</script>
 
 		<!-- jQuery end -->
 	</body>
