@@ -62,7 +62,7 @@
 						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." laoding="lazy" />
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
-							<h6 class="distance" id="distance">500 meter dari jarak anda</h4>
+							<h6 class="distance" id="distance"></h4>
 							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 						</div>
 					</div>
@@ -162,7 +162,7 @@
 			getlocation();
 			setInterval(() => {
 				getlocation();
-			}, 3000);
+			}, 5000);
 			
 			function getlocation() {
 				if (navigator.geolocation) {
@@ -173,14 +173,29 @@
 			}
 
 			function showPosition(position) {
-				console.log('Koordinatnya adalah', position.coords.latitude,position.coords.longitude);
+				console.log('Koordinatnya adalah', position.coords.latitude + "," +position.coords.longitude);
 			}
 
-			function createMarker() {
-				var locationFrom = [navigator.geolocation.getCurrentPosition(showPosition)];
-				var locationTo =  L.circleMarker([18.9750,72.8258], { color: "#4AFF00", radius: 10 });
-				var from = markerFrom.getLatLng();
-				var to = markerTo.getLatLng();
+			function positionNow(position) {
+				var coordinat = position.coords.latitude + "," + position.coords.logitude;
+
+				return coordinat;
+			}
+
+			// revisi
+			// rombak database lagi, buat di table user tuh field "lokasi" inya saat ini dengan nullable, nanti waktu login isi datanya, trus kalo inya logout dihapus datanya, nanti data inya tuh di bandingkan lwn data lokasi bengkel disini, setelah itu nanti dapat hasilnya baru ditampilkan
+
+			// masalah yg belum terpecahkan
+			// masalahnya nih adalah, gimana cara aku menyortir postingannya lewat data perhitungan jarak lokasi user dengan bengkel, kalo sekedar nampilin jarak kek nya masih meumngkinkan, tapi supaya bengkel yang tampil pertama tuh bengkel terdekat tuh gimana, apakah bisa lewat foreach itu dikasih sebuah kondisi atau fungsi supaya yang data yang dialbil pertama tuh adalah data dengan jarak yg palin kecil, kalo misal ngambil data nya lewat perintah SQL dengan ORDER BY itu rasa kd mungkin karena di db yg disimpan tuh data koordinat dari user lwn bengkel, lain dta jarak, nah sedangkan data jarak nih muncul saat si JS nih sdh ngehitung jarak dari user yg login lwn bengkel yg ada di db menggunakan koordinat, apakah bisa kita langsung ngirim hasil dari perhitungan jarak nih langsung ke database trus bikin orderBy jarak terkecil?, ini sih yg jdi pertanyaan, menghadeh 
+			createDistance();
+
+			function createDistance() {
+				var locationFrom = [navigator.geolocation.getCurrentPosition()];
+				@foreach($Bengkels as $bengkel)
+				var locationTo = [{{ $bengkel->maps }}];
+				@endforeach
+				var from = locationFrom.getLatLng();
+				var to = locationTo.getLatLng();
 				locationFrom.bindPopup((from).toString());
 				locationTo.bindPopup((to).toString());
 				getDistance(from, to);
@@ -188,7 +203,8 @@
 
 			function getDistance(from, to) {
 				var container = document.getElementById('distance');
-				container.innerHTML = ((from.distanceTo(to)).toFixed(0)/1000) + ' meter dari jarak anda';
+				console.log('jarak' + ((from.distanceTo(to)) + ' meter dari jarak anda');
+				// container.innerHTML = ((from.distanceTo(to)).toFixed(0)/1000) + ' meter dari jarak anda';
 			}
 		</script>
 

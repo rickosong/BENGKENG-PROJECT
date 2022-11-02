@@ -123,6 +123,10 @@ a img {
     background-color: #263571;
     color: white;
 }
+.btn-card-info:hover {
+    background-color: #152150;
+    color: white;
+}
 
 h5.click-postingan a {
     text-decoration: none;
