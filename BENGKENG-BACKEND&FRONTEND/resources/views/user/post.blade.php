@@ -75,8 +75,13 @@
                     <div class="row">
 						<h1 class=" col-lg-7 col-md-6 col-5"><strong><b>{{ $bengkel->namabengkel }}</b></strong></h1>
 						<span class="col-lg-4 col-5 col-md-4">
-							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">50</span></button>
-							<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewJelek" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">15</span></button>
+							@if ($checkReview == 0)
+								<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewBagus" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">{{ $likes }}</span></button>
+								<button type="button" data-bs-toggle="modal" data-bs-target="#modalReviewJelek" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">{{ $dislikes }}</span></button>
+							@else
+							<button type="button" data-bs-toggle="modal" data-bs-target="#modalTidakBisaReview" data-bs-whatever="Anda Menyukai Bengkel ini" class="btn btn-outline-success me-3"><i class=" fa fa-thumbs-up fa-lg me-3"></i><span class="">{{ $likes }}</span></button>
+							<button type="button" data-bs-toggle="modal" data-bs-target="#modalTidakBisaReview" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">{{ $dislikes }}</span></button>
+							@endif
 						</span>
                     	<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-1 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
 					</div>
@@ -136,6 +141,27 @@
 							<button type="submit" class="btn btn-primary" id="tombolModal">Kirim</button>
 						</div>
 					</form>
+				</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="modalTidakBisaReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Anda Sudah Memberikan Review</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+						<div class="modal-body">
+							{{-- <p class="text-center"><i class="fa fa-thumbs-down text-danger fa-4x"></i></p> --}}
+							<div class="mb-3">
+								<h6>Anda sudah pernah memberi Review Pada Bengkel ini, Review Hanya Bisa dilakukan Sekali saja pada satu Bengkel</h6>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-warning" data-bs-dismiss="modal">Keluar</button>
+						</div>
 				</div>
 				</div>
 			</div>

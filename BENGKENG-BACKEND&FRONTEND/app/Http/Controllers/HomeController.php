@@ -69,10 +69,24 @@ class HomeController extends Controller
         $viewsBengkel = $bengkel->views;
 
         Bengkel::where('id', $id)->update(['views' => $viewsBengkel + 1]);
+
+        $likes = Review::where('bengkel_id', $id)->where('rating_id', 1)->get();
+        $dislikes = Review::where('bengkel_id', $id)->where('rating_id', 2)->get();
+
+        $likesCount = $likes->count();
+        $dislikesCount = $dislikes->count();
+
+        $allReview = Review::where('bengkel_id', $id)->where('user_id', auth()->user()->id)->get();
+        $reviewCount = $allReview->count();
+
+        // var_dump($review->user_id);
         
         return view('user.post', [
             'bengkel' => $bengkel,
             'allReview' => Review::where('bengkel_id', $id)->get(),
+            'checkReview' => $reviewCount,
+            'likes' => $likesCount,
+            'dislikes' => $dislikesCount,
         ]);
     }
 

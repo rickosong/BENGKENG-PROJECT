@@ -48,7 +48,7 @@ class RegisterController extends Controller
             $user->email = $request->email;
             $user->name = 'Silahkan isi Nama Anda';
             $user->password = bcrypt($password);
-            $user->phonenumber = $request->phone;
+            $user->phonenumber = '62' . $request->phone;
             $user->birth = 'Silahkan isi tanggal lahir anda';
             $user->image = 'user.svg';
             $user->havebengkel = false;

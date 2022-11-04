@@ -85,7 +85,7 @@ class BengkelController extends Controller
         $bengkel->deskripsi = $request->deskripsi;
         $bengkel->alamat = $request->alamat;
         $bengkel->layananjasa = $request->layanan;
-        $bengkel->phonenumber = $request->phone;
+        $bengkel->phonenumber = '62' . $request->phone;
         $bengkel->jenisbengkel_id = $request->jenis;
         $bengkel->status_id = 1;
         $bengkel->maps = $request->maps;
