@@ -71,55 +71,27 @@
 				@empty
 					<h5 class="text-center text-secondary">tidak ada bengkel yang ada di section ini</h5>
 				@endforelse ($collection as $item)
-
+			</div>
 				<br><br>
 				<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>
 				<br><br>
 				<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
 				<div class="row">
+					@forelse ($bestBengkels as $bengkel)
 					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
 						<div class="card h-auto">
-							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
+							<img src="{{ 'img' }}/{{ $bengkel->Bengkel->image }}" class="card-img-top img-thumbnail" alt="..." loading="lazy" />
 							<div class="card-body">
-								<h5 class="card-title m-1">Bengkel 1</h5>
-								<h6 class="distance">500 meter dari jarak anda</h4>
-								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
+								<h5 class="card-title m-1">{{ $bengkel->Bengkel->namabengkel }}</h5>
+								<h6 class="distance" id="distance"></h4>
+									<br>
+								<a href="{{ route('post', $bengkel->Bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-						<div class="card h-auto">
-							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-							<div class="card-body">
-								<h5 class="card-title m-1">Bengkel 2</h5>
-								<h6 class="distance">500 meter dari jarak anda</h4>
-								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-						<div class="card h-auto">
-							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-							<div class="card-body">
-								<h5 class="card-title m-1">Bengkel 3</h5>
-								<h6 class="distance">500 meter dari jarak anda</h4>
-								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
-						<div class="card">
-							<img src="../img/img2.jpg" class="card-img-top" alt="..." />
-							<div class="card-body">
-								<h5 class="card-title m-1">Bengkel 4</h5>
-								<h6 class="distance">500 meter dari jarak anda</h4>
-								<a href="post.html" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i> Info Selengkapnya</a>
-							</div>
-						</div>
-					</div>
+					@empty
+						<h5 class="text-center text-secondary">tidak ada bengkel yang ada di section ini</h5>
+					@endforelse ($collection as $item)
 				</div>		
 			</div>
 		</div>

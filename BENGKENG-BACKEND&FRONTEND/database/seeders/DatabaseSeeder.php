@@ -34,7 +34,31 @@ class DatabaseSeeder extends Seeder
                 'email' => 'user1@gmail.com',
                 'name' => 'Akulah Sipengguna',
                 'password' => bcrypt('pass321'),
-                'phonenumber' => '6281932432218',
+                'phonenumber' => '628198616849',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => false,
+            ]
+        );
+
+        User::create(
+            [
+                'email' => 'user2@gmail.com',
+                'name' => 'Abang Zoya',
+                'password' => bcrypt('user2'),
+                'phonenumber' => '6287779737901',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => false,
+            ]
+        );
+
+        User::create(
+            [
+                'email' => 'user3@gmail.com',
+                'name' => 'Abang Irfan',
+                'password' => bcrypt('user3'),
+                'phonenumber' => '6285705613369',
                 'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
                 'havebengkel' => false,
@@ -78,6 +102,23 @@ class DatabaseSeeder extends Seeder
             [
                 'jenis_bengkel' => 'Bengkel Mobil'
             ]
+        );
+
+        Bengkel::create(
+            [
+                'user_id' => '1',
+                'namabengkel' => 'Bengkel Kita',
+                'deskripsi' => 'ini adalah bengkel kita, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_likes' => 0,
+                'total_dislikes' => 0,
+            ],
         );
     }
 }

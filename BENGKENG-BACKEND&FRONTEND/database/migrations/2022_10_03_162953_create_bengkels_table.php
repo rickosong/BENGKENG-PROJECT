@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('maps');
             $table->string('image');
             $table->integer ('views');
+            $table->integer('total_likes');
+            $table->integer('total_dislikes');
             $table->timestamps();
         });
     }

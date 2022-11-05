@@ -24,6 +24,7 @@ class HomeController extends Controller
     {
         return view('user.home', [
             'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
+            // 'bestBengkel' => Review::all()->sortBy('rating_id', 'DESC')->take(4)->get(),
         ]);
     }
 
@@ -65,19 +66,27 @@ class HomeController extends Controller
      */
     public function post($id)
     {
+        // for  views
         $bengkel = Bengkel::find($id);
         $viewsBengkel = $bengkel->views;
 
         Bengkel::where('id', $id)->update(['views' => $viewsBengkel + 1]);
+        // for views end
 
+        // for counting like and dislikes
         $likes = Review::where('bengkel_id', $id)->where('rating_id', 1)->get();
         $dislikes = Review::where('bengkel_id', $id)->where('rating_id', 2)->get();
 
         $likesCount = $likes->count();
         $dislikesCount = $dislikes->count();
+        // counting like and dislike end
 
+        // disini nanti tambahkan sebuah logic untuk memasukkan total hitung like dan dislike kedalam field total_likes dan total_dislikes di dalam table bengkel
+
+        // for check if auth user have review or not
         $allReview = Review::where('bengkel_id', $id)->where('user_id', auth()->user()->id)->get();
         $reviewCount = $allReview->count();
+        // check review end
 
         // var_dump($review->user_id);
         
