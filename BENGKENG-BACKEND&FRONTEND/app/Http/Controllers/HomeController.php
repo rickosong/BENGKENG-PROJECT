@@ -81,7 +81,8 @@ class HomeController extends Controller
         $dislikesCount = $dislikes->count();
         // counting like and dislike end
 
-        // disini nanti tambahkan sebuah logic untuk memasukkan total hitung like dan dislike kedalam field total_likes dan total_dislikes di dalam table bengkel
+        // disini nanti tambahkan sebuah logic untuk membagi total hitung dari like dan dislike lalu hasilnya dimasukkan ke dalam field total_rating
+        $totalRating = $likesCount / $dislikesCount;
 
         // for check if auth user have review or not
         $allReview = Review::where('bengkel_id', $id)->where('user_id', auth()->user()->id)->get();

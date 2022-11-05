@@ -116,8 +116,7 @@ class DatabaseSeeder extends Seeder
                 'maps' => '1979279797942,9139791773197',
                 'image' => 'gambar bengkel.jpg',
                 'views' => 0,
-                'total_likes' => 0,
-                'total_dislikes' => 0,
+                'total_rating' => 0,
             ],
         );
     }
