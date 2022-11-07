@@ -255,7 +255,7 @@
 												<!-- /.direct-chat-text -->
 											</div>
 											@empty
-												<p class="text-center">masih tidak review yg diberikan</p>
+												<p class="text-center">masih tidak ada review yg diberikan</p>
 											@endforelse
 											<!-- /.direct-chat-msg -->
 										</div>

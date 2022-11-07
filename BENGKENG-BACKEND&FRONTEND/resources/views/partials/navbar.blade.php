@@ -1,7 +1,7 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
 	<div class="container-fluid">
-		<a class="navbar-brand row justify-content-center" href="home.html"><img src="../img/Bengkeng proect navbar.png" alt="BENGKENG logo" title="BENGKENG"></a>
+		<a class="navbar-brand row justify-content-center" href="{{ route('home') }}"><img src="../img/Bengkeng proect navbar.png" alt="BENGKENG logo" title="BENGKENG"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
