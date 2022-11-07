@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 'phonenumber' => '628198616849',
                 'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
-                'havebengkel' => false,
+                'havebengkel' => true,
             ]
         );
 
@@ -110,6 +110,7 @@ class DatabaseSeeder extends Seeder
                 'namabengkel' => 'Bengkel Kita',
                 'deskripsi' => 'ini adalah bengkel kita, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
                 'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
                 'phonenumber' => '6281998616849',
                 'jenisbengkel_id' => 1,
                 'status_id' => 1,

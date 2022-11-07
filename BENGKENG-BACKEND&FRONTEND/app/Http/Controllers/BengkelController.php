@@ -91,6 +91,7 @@ class BengkelController extends Controller
         $bengkel->maps = $request->maps;
         $bengkel->image = $imageName;
         $bengkel->views = 0;
+        $bengkel->total_rating = 0;
 
         if ($bengkel->save()) {
             User::where('id', auth()->user()->id)->update(['havebengkel' => true]);
@@ -149,6 +150,7 @@ class BengkelController extends Controller
         // $bengkel->jenisbengkel_id = $request->jenisbengkel;
         // $bengkel->status_id  =  $request->status;
         $bengkel->maps = $request->maps;
+        $bengkel->total_rating = $bengkel->total_rating;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');

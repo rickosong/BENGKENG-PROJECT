@@ -24,7 +24,7 @@ class HomeController extends Controller
     {
         return view('user.home', [
             'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
-            // 'bestBengkel' => Review::all()->sortBy('rating_id', 'DESC')->take(4)->get(),
+            'bestBengkel' => Bengkel::all()->sortByDesc('total_rating')->take(4),
         ]);
     }
 
@@ -82,7 +82,12 @@ class HomeController extends Controller
         // counting like and dislike end
 
         // disini nanti tambahkan sebuah logic untuk membagi total hitung dari like dan dislike lalu hasilnya dimasukkan ke dalam field total_rating
-        $totalRating = $likesCount / $dislikesCount;
+        if ($dislikesCount != 0) {
+            $totalRating = $likesCount / $dislikesCount;
+            Bengkel::where('id', $id)->update(['total_rating' => $totalRating]);
+        } else{
+            Bengkel::where('id', $id)->update(['total_rating' => 0]);
+        }
 
         // for check if auth user have review or not
         $allReview = Review::where('bengkel_id', $id)->where('user_id', auth()->user()->id)->get();
