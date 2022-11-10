@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('user.landing', [
-            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->take(4),
+            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->take(4)->where('status_id', 1),
         ]);
     }
 
@@ -24,7 +24,7 @@ class HomeController extends Controller
     {
         return view('user.home', [
             'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
-            'bestBengkel' => Bengkel::all()->sortByDesc('total_rating')->take(4),
+            'bestBengkel' => Bengkel::all()->sortByDesc('total_rating')->take(4)->where('status_id', 1),
         ]);
     }
 
@@ -86,7 +86,7 @@ class HomeController extends Controller
             $totalRating = $likesCount / $dislikesCount;
             Bengkel::where('id', $id)->update(['total_rating' => $totalRating]);
         } else{
-            Bengkel::where('id', $id)->update(['total_rating' => 0]);
+            Bengkel::where('id', $id)->update(['total_rating' => $likesCount]);
         }
 
         // for check if auth user have review or not
