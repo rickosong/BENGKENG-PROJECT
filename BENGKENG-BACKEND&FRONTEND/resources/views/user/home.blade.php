@@ -158,11 +158,11 @@
 			// revisi
 			// rombak database lagi, buat di table user tuh field "lokasi" inya saat ini dengan nullable, nanti waktu login isi datanya, trus kalo inya logout dihapus datanya, nanti data inya tuh di bandingkan lwn data lokasi bengkel disini, setelah itu nanti dapat hasilnya baru ditampilkan
 
-			createDistance();
+			// createDistance();
 
-			function createDistance() {
-				var locationFrom = [navigator.geolocation.getCurrentPosition()];
-				console.log(locatonFrom);
+			// function createDistance() {
+			// 	var locationFrom = [navigator.geolocation.getCurrentPosition()];
+			// 	console.log(locatonFrom);
 				// @foreach($Bengkels as $bengkel)
 				// var locationTo = [{{ $bengkel->maps }}];
 				// @endforeach
@@ -173,9 +173,9 @@
 				// getDistance(from, to);
 			}
 
-			function getDistance(from, to) {
-				var container = document.getElementById('distance');
-				console.log('jarak' + ((from.distanceTo(to)) + ' meter dari jarak anda');
+			// function getDistance(from, to) {
+			// 	var container = document.getElementById('distance');
+			// 	console.log('jarak' + ((from.distanceTo(to)) + ' meter dari jarak anda');
 				// container.innerHTML = ((from.distanceTo(to)).toFixed(0)/1000) + ' meter dari jarak anda';
 			}
 		</script>
