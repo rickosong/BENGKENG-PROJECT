@@ -46,7 +46,7 @@ class RegisterController extends Controller
         if ($password == $confirmpass) {
             $user = New User();
             $user->email = $request->email;
-            $user->name = 'Silahkan isi Nama Anda';
+            $user->name = $request->nama;
             $user->password = bcrypt($password);
             $user->phonenumber = '62' . $request->phone;
             $user->birth = 'Silahkan isi tanggal lahir anda';
