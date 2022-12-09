@@ -62,7 +62,12 @@
 						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." laoding="lazy" />
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
-							<h6 class="distance" id="distance"></h4>
+							@if ($bengkel->jenisbengkel_id == 1)
+							<small>Bengkel Motor</small>
+							@else
+							<small>Bengkel Mobil</small>
+							@endif
+							{{-- <h6 class="distance" id="distance"></h4> --}}
 								<br>
 							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 						</div>

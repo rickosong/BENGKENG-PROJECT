@@ -11,7 +11,7 @@
 					<a class="nav-link active" id="home" href="{{ route('home') }}">Home</span></a>
 				</li>
 				<li class="nav-item active">
-					{{-- <a class="nav-link active" href="{{ route('bengkelterdekat') }}">Bengkel Terdekat</a> --}}
+					<a class="nav-link active" href="{{ route('semuabengkel') }}">Semua Bengkel</a>
 				</li>
 				<form class="d-flex" role="search" action="{{ route('caribengkel') }}" method="POST">
 					@csrf

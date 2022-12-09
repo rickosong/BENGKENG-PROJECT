@@ -105,6 +105,12 @@ class HomeController extends Controller
         ]);
     }
 
+    public function semuabengkel(){
+        return view('user.semuabengkel', [
+            'Bengkels' => Bengkel::where('status_id', 1)->paginate(1),
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

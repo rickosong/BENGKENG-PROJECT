@@ -23,6 +23,7 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', [HomeController::class, 'index'])->name('landing')->middleware('guest');
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
 Route::get('/bengkelterdekat', [HomeController::class, 'bengkelterdekat'])->name('bengkelterdekat')->middleware('auth');
+Route::get('/semuabengkel', [HomeController::class, 'semuabengkel'])->name('semuabengkel')->middleware('auth');
 Route::post('/caribengkel', [HomeController::class, 'caribengkel'])->name('caribengkel')->middleware('auth');
 Route::get('/bengkelpost/{bengkel:id}', [HomeController::class, 'post'])->name('post')->middleware('auth');
 Route::post('/reviewbengkel/{bengkel:id}', [HomeController::class, 'postreview'])->name('uploadreview');

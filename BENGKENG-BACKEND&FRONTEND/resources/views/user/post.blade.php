@@ -70,6 +70,10 @@
             </div>
             <br>
 
+			@if ($bengkel->status_id == 2)
+			<h3 class="alert alert-danger alert-dismissible fade show" role="alert">Bengkel Tutup</h3>				
+			@endif
+
             <div class="col-lg-12">
                 <div class="card harga">
                     <div class="row">
@@ -83,7 +87,9 @@
 							<button type="button" data-bs-toggle="modal" data-bs-target="#modalTidakBisaReview" class="btn btn-outline-danger"><i class=" fa fa-thumbs-down fa-lg me-3"></i><span class="">{{ $dislikes }}</span></button>
 							@endif
 						</span>
-                    	<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-1 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
+                    	@if ($bengkel->status_id != 2)
+						<a href="https://wa.me/{{ $bengkel->phonenumber }}"  class=" col-lg-1 col-md-2 col-1"><img src="../img/WhatsApp.svg.webp" id="wa"></a>
+						@endif
 					</div>
                 </div>
             </div>
@@ -216,7 +222,7 @@
 					@endforelse
 				</div>
             </div>
-        </div>
+        </h3>
 		<br><br><br><br>
     
 
