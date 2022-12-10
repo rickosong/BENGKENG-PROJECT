@@ -8,7 +8,7 @@
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 		<link rel="stylesheet" href="../css/bengkelterdekat.css" />
 		<link rel="shortcut icon" href="../img/BENGKENG PROJECT.png" type="image/x-icon" />
-		<title>BENGKENG | BENGKEL TERDEKAT</title>
+		<title>BENGKENG | BENGKEL TERBAIK</title>
 	</head>
 	<body>
 		<!-- alert bergabung -->
@@ -24,7 +24,7 @@
 		<!-- card and content -->
 		<div class="container">
 			<br><br>
-			<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terdekat</h1>
+			<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>
 			<br><br>
 			<div class="row">
 				@forelse ($Bengkels as $bengkel)
@@ -33,8 +33,13 @@
 						<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." laoding="lazy" />
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
-							<h6 class="distance">500 meter dari jarak anda</h4>
-							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+							@if ($bengkel->jenisbengkel_id == 1)
+							<small>Bengkel Motor</small>
+							@else
+							<small>Bengkel Mobil</small>
+							@endif
+							{{-- <h6 class="distance">500 meter dari jarak anda</h4> --}}
+							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
 						</div>
 					</div>
 				</div>

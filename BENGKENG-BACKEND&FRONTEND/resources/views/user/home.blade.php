@@ -54,7 +54,7 @@
 			<br><br>
 			<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terdekat</h1>
 			<br><br>
-			<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
+			{{-- <h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5> --}}
 			<div class="row">
 				@forelse ($Bengkels as $bengkel)
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
@@ -80,7 +80,7 @@
 				<br><br>
 				<h1 class="text-lg-center text-md-center text-sm-center">Bengkel Terbaik</h1>
 				<br><br>
-				<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="Bengkelan.html">Semua</a></h5>
+				<h5 class="text-lg-end text-md-end text-sm-end click-postingan"><a href="{{ route('bengkelterdekat') }}">Semua</a></h5>
 				<div class="row">
 					@forelse ($bestBengkel as $bengkel)
 					<div class="col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
@@ -88,6 +88,11 @@
 							<img src="{{ 'img' }}/{{ $bengkel->image }}" class="card-img-top img-thumbnail" alt="..." loading="lazy" />
 							<div class="card-body">
 								<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
+								@if ($bengkel->jenisbengkel_id == 1)
+								<small>Bengkel Motor</small>
+								@else
+								<small>Bengkel Mobil</small>
+								@endif
 								{{-- <h6 class="distance" id="distance"> Rating Bengkel {{ $bengkel->total_rating }}</h4> --}}
 									<br>
 								<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>

@@ -51,10 +51,10 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function bengkelterdekat()
+    public function bengkelterbaik()
     {
-        return view('user.bengkelterdekat', [
-            'Bengkels' => Bengkel::all(),
+        return view('user.bengkelterbaik', [
+            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->where('status_id', 1),
         ]);
     }
 
@@ -107,7 +107,7 @@ class HomeController extends Controller
 
     public function semuabengkel(){
         return view('user.semuabengkel', [
-            'Bengkels' => Bengkel::where('status_id', 1)->paginate(1),
+            'Bengkels' => Bengkel::where('status_id', 1)->paginate(8),
         ]);
     }
 
