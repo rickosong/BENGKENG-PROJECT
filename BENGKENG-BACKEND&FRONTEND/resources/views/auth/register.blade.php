@@ -49,9 +49,9 @@
 						</div>
 						<br />
 						<div class="form-group mb-3">
-							<label for="nama" class="teks-kolom">Nama :</label>
-							<input type="nama" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Masukkan Nama Anda" required value="{{ old('nama') }}" />
-							@error('nama')
+							<label for="password" class="teks-kolom">Password :</label>
+							<input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Masukkan Password Anda" required value="{{ old('password') }}" />
+							@error('password')
 							<div class="invalid-feedback">
 								{{ $message }}
 							</div>
@@ -59,9 +59,9 @@
 						</div>
 						<br />
 						<div class="form-group mb-3">
-							<label for="password" class="teks-kolom">Password :</label>
-							<input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Masukkan Password Anda" required value="{{ old('password') }}" />
-							@error('password')
+							<label for="nama" class="teks-kolom">Nama :</label>
+							<input type="nama" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Masukkan Nama Anda" required value="{{ old('nama') }}" />
+							@error('nama')
 							<div class="invalid-feedback">
 								{{ $message }}
 							</div>
