@@ -35,7 +35,11 @@
 						<div class="card-body">
 							<h5 class="card-title m-1">{{ $bengkel->namabengkel }}</h5>
 							{{-- <h6 class="distance">500 meter dari jarak anda</h4> --}}
+							@if ($bengkel->status_id != 1)
+								<button class=" btn btn-danger col-12">Bengkel Tutup</button>
+							@else
 							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+							@endif
 						</div>
 					</div>
 				</div>

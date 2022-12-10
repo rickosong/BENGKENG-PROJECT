@@ -16,15 +16,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('user.landing', [
-            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->take(4)->where('status_id', 1),
+            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->take(4),
         ]);
     }
 
     public function home()
     {
         return view('user.home', [
-            'Bengkels' => Bengkel::where('status_id', 1)->take(4)->get(),
-            'bestBengkel' => Bengkel::all()->sortByDesc('total_rating')->take(4)->where('status_id', 1),
+            'Bengkels' => Bengkel::all()->take(4),
+            'bestBengkel' => Bengkel::all()->sortByDesc('total_rating')->take(4),
         ]);
     }
 
@@ -54,7 +54,7 @@ class HomeController extends Controller
     public function bengkelterbaik()
     {
         return view('user.bengkelterbaik', [
-            'Bengkels' => Bengkel::all()->sortByDesc('total_rating')->where('status_id', 1),
+            'Bengkels' => Bengkel::all()->sortByDesc('total_rating'),
         ]);
     }
 
@@ -107,7 +107,7 @@ class HomeController extends Controller
 
     public function semuabengkel(){
         return view('user.semuabengkel', [
-            'Bengkels' => Bengkel::where('status_id', 1)->paginate(8),
+            'Bengkels' => Bengkel::paginate(8),
         ]);
     }
 

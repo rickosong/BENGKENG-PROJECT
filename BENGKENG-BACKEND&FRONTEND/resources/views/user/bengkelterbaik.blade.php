@@ -39,14 +39,18 @@
 							<small>Bengkel Mobil</small>
 							@endif
 							{{-- <h6 class="distance">500 meter dari jarak anda</h4> --}}
+							@if ($bengkel->status_id != 1)
+								<button class=" btn btn-danger col-12">Bengkel Tutup</button>
+							@else
 							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+							@endif
 						</div>
 					</div>
 				</div>
 				@empty
 					<h5 class="text-center text-secondary">tidak ada bengkel yang ada di section ini</h5>
 				@endforelse ($collection as $item)
-			</div>		
+			</div>
 		</div>
 		<!-- card and content -->
 		<br><br><br><br><br><br><br><br>

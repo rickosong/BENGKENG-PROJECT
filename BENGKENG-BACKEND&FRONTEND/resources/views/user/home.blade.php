@@ -69,7 +69,11 @@
 							@endif
 							{{-- <h6 class="distance" id="distance"></h4> --}}
 								<br>
+							@if ($bengkel->status_id != 1)
+								<button class=" btn btn-danger col-12">Bengkel Tutup</button>
+							@else
 							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -94,8 +98,12 @@
 								<small>Bengkel Mobil</small>
 								@endif
 								{{-- <h6 class="distance" id="distance"> Rating Bengkel {{ $bengkel->total_rating }}</h4> --}}
-									<br>
-								<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+								<br>
+							@if ($bengkel->status_id != 1)
+								<button class=" btn btn-danger col-12">Bengkel Tutup</button>
+							@else
+							<a href="{{ route('post', $bengkel->id) }}" class="btn btn-card-info col-12"><i class="fa fa-commenting-o" aria-hidden="true"></i>Selengkapnya</a>
+							@endif
 							</div>
 						</div>
 					</div>

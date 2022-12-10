@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 'phonenumber' => '6287779737901',
                 'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
-                'havebengkel' => false,
+                'havebengkel' => true,
             ]
         );
 
@@ -61,7 +61,84 @@ class DatabaseSeeder extends Seeder
                 'phonenumber' => '6285705613369',
                 'birth' => 'Silahkan isi tanggal lahir anda',
                 'image' => 'user.svg',
-                'havebengkel' => false,
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user4@gmail.com',
+                'name' => 'Abang safrudin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user5@gmail.com',
+                'name' => 'Abang Udin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user6@gmail.com',
+                'name' => 'Abang Badarudin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user7@gmail.com',
+                'name' => 'Abang Aminudin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user8@gmail.com',
+                'name' => 'Abang Syakirudin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user9@gmail.com',
+                'name' => 'Abang Minudin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
+            ]
+        );
+        User::create(
+            [
+                'email' => 'user10@gmail.com',
+                'name' => 'Abang solihin',
+                'password' => bcrypt('abcde'),
+                'phonenumber' => '6285705613369',
+                'birth' => 'Silahkan isi tanggal lahir anda',
+                'image' => 'user.svg',
+                'havebengkel' => true,
             ]
         );
 
@@ -113,6 +190,150 @@ class DatabaseSeeder extends Seeder
                 'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
                 'phonenumber' => '6281998616849',
                 'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '2',
+                'namabengkel' => 'BengkelKu',
+                'deskripsi' => 'ini adalah bengkelku, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '3',
+                'namabengkel' => 'Bengkel Inya',
+                'deskripsi' => 'ini adalah bengkel Inya, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 2,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '4',
+                'namabengkel' => 'Bengkel Ulun',
+                'deskripsi' => 'ini adalah bengkel Ulun, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, dll',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '5',
+                'namabengkel' => 'Bengkel Bersama',
+                'deskripsi' => 'ini adalah bengkel bersama, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, dll',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '6',
+                'namabengkel' => 'Bengkel Gue',
+                'deskripsi' => 'ini adalah bengkel Gue, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '7',
+                'namabengkel' => 'Bengkel Siapa',
+                'deskripsi' => 'ini adalah bengkel Siapa, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 2,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '8',
+                'namabengkel' => 'Bengkel Nda',
+                'deskripsi' => 'ini adalah bengkel Nda, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 2,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '9',
+                'namabengkel' => 'Bengkel Jaya',
+                'deskripsi' => 'ini adalah bengkel Jaya, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 1,
+                'status_id' => 1,
+                'maps' => '1979279797942,9139791773197',
+                'image' => 'gambar bengkel.jpg',
+                'views' => 0,
+                'total_rating' => 0,
+            ],
+        );
+        Bengkel::create(
+            [
+                'user_id' => '10',
+                'namabengkel' => 'Bengkel Perkasa',
+                'deskripsi' => 'ini adalah bengkel Perkasa, bengkel yang melayani anda dengan sepenuh hati jiwa dan raga',
+                'alamat' => 'jalan tiada ujung, komplek tanpa nama, kelurahan sukatidur, kota hantu',
+                'layananjasa' => 'jasa yang kami sediakan beragam, mulai dari gati oli, ganti ban, tambal ban, dan lain-lain',
+                'phonenumber' => '6281998616849',
+                'jenisbengkel_id' => 2,
                 'status_id' => 1,
                 'maps' => '1979279797942,9139791773197',
                 'image' => 'gambar bengkel.jpg',

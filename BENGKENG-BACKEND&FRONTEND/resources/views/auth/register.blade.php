@@ -39,7 +39,18 @@
 								</div>
 							@endif
 							<!-- <br /><br /> -->
-							<label for="email" class="teks-kolom">Email :</label>
+							<br />
+						<div class="form-group mb-3">
+							<label for="nama" class="teks-kolom">Nama :</label>
+							<input type="nama" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Masukkan Nama Anda" required value="{{ old('nama') }}" />
+							@error('nama')
+							<div class="invalid-feedback">
+								{{ $message }}
+							</div>
+							@enderror
+						</div>
+						<br>
+						<label for="email" class="teks-kolom">Email :</label>
 							<input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" aria-describedby="emailHelp" placeholder="Masukkan Email Anda" required value="{{ old('email') }}" />
 							@error('email')
 							<div class="invalid-feedback">
@@ -52,16 +63,6 @@
 							<label for="password" class="teks-kolom">Password :</label>
 							<input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Masukkan Password Anda" required value="{{ old('password') }}" />
 							@error('password')
-							<div class="invalid-feedback">
-								{{ $message }}
-							</div>
-							@enderror
-						</div>
-						<br />
-						<div class="form-group mb-3">
-							<label for="nama" class="teks-kolom">Nama :</label>
-							<input type="nama" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Masukkan Nama Anda" required value="{{ old('nama') }}" />
-							@error('nama')
 							<div class="invalid-feedback">
 								{{ $message }}
 							</div>
